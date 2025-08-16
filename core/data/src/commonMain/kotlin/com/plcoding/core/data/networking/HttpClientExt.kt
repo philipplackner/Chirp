@@ -22,8 +22,8 @@ expect suspend fun <T> platformSafeCall(
 
 suspend inline fun <reified Request, reified Response: Any> HttpClient.post(
     route: String,
-    queryParams: Map<String, Any> = mapOf(),
     body: Request,
+    queryParams: Map<String, Any> = mapOf(),
     crossinline builder: HttpRequestBuilder.() -> Unit = {}
 ): Result<Response, DataError.Remote> {
     return safeCall {
