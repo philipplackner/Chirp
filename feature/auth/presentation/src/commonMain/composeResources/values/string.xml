@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="welcome_to_chirp">Welcome to Chirp!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="username_placeholder">Chirp</string>
+    <string name="email_placeholder">hello@chirp.com</string>
+    <string name="login">Log In</string>
+    <string name="username_hint">Use between 3 and 20 characters for your username</string>
+    <string name="password_hint">Use 9+ characters, at least one digit and one uppercase letter</string>
+    <string name="error_account_exists">An account with that email or username already exists</string>
+</resources>
