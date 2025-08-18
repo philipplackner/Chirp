@@ -32,4 +32,5 @@
     <string name="error_invalid_email">This is not a valid email</string>
     <string name="error_invalid_username">The username must be between 3 and 20 characters</string>
     <string name="error_invalid_credentials">The email or password is incorrect</string>
+    <string name="error_email_not_verified">Unable to login because your email isn't verified</string>
 </resources>
