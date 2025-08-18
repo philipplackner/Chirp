@@ -1,5 +1,6 @@
 package com.plcoding.core.data.auth
 
+import com.plcoding.core.data.dto.requests.EmailRequest
 import com.plcoding.core.data.dto.requests.RegisterRequest
 import com.plcoding.core.data.networking.post
 import com.plcoding.core.domain.auth.AuthService
@@ -23,6 +24,13 @@ class KtorAuthService(
                 username = username,
                 password = password
             )
+        )
+    }
+
+    override suspend fun resendVerificationEmail(email: String): EmptyResult<DataError.Remote> {
+        return httpClient.post(
+            route = "/auth/resend-verification",
+            body = EmailRequest(email),
         )
     }
 }
