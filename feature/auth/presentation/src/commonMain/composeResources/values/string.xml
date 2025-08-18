@@ -5,6 +5,16 @@
     <string name="verification_email_sent_to_x">We've sent a verification email to %1$s</string>
     <string name="resend_verification_email">Resend verification email</string>
     <string name="resent_verification_email">Successfully resent verification email</string>
+    <string name="verifying_account">Verifying account...</string>
+    <string name="email_verified_successfully">Email verified successfully!</string>
+    <string name="email_verified_failed">Failed to verify your email</string>
+    <string name="email_verified_successfully_desc">
+        Your email has been verified. You can now log in with your credentials.
+    </string>
+    <string name="email_verified_failed_desc">
+        Unable to verify your email. Maybe the link is invalid or has expired.
+    </string>
+    <string name="close">Close</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
