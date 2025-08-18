@@ -1,6 +1,7 @@
 package com.plcoding.auth.presentation.di
 
 import com.plcoding.auth.presentation.email_verification.EmailVerificationViewModel
+import com.plcoding.auth.presentation.login.LoginViewModel
 import com.plcoding.auth.presentation.register.RegisterViewModel
 import com.plcoding.auth.presentation.register_success.RegisterSuccessViewModel
 import org.koin.core.module.dsl.viewModelOf
@@ -10,4 +11,5 @@ val authPresentationModule = module {
     viewModelOf(::RegisterViewModel)
     viewModelOf(::RegisterSuccessViewModel)
     viewModelOf(::EmailVerificationViewModel)
+    viewModelOf(::LoginViewModel)
 }
