@@ -2,6 +2,7 @@ package com.plcoding.chirp
 
 import androidx.compose.runtime.Composable
 import com.plcoding.auth.presentation.register.RegisterRoot
+import com.plcoding.auth.presentation.register_success.RegisterSuccessRoot
 import com.plcoding.core.designsystem.theme.ChirpTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -9,8 +10,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Preview
 fun App() {
     ChirpTheme {
-        RegisterRoot(
-            onRegisterSuccess = {}
+        RegisterSuccessRoot(
+
         )
     }
 }
