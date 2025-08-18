@@ -91,7 +91,7 @@ class RegisterViewModel(
     }
 
     private fun register() {
-        if (validateFormInputs()) {
+        if (!validateFormInputs()) {
             return
         }
 
