@@ -28,6 +28,7 @@ kotlin {
             implementation(projects.feature.chat.presentation)
 
             implementation(libs.jetbrains.compose.navigation)
+            implementation(libs.bundles.koin.common)
 
             implementation(compose.runtime)
             implementation(compose.foundation)
