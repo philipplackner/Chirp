@@ -25,9 +25,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="https"
-                    android:host="chirp.pl-coding.com"
-                    android:pathPrefix="/api/auth/verify" />
+                <data android:scheme="https" />
+                <data android:host="chirp.pl-coding.com" />
+
+                <data android:pathPrefix="/api/auth/verify" />
+                <data android:pathPrefix="/api/auth/reset-password" />
             </intent-filter>
 
             <intent-filter>
@@ -35,9 +37,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="chirp"
-                    android:host="chirp.pl-coding.com"
-                    android:pathPrefix="/api/auth/verify" />
+                <data android:scheme="chirp" />
+                <data android:host="chirp.pl-coding.com" />
+
+                <data android:pathPrefix="/api/auth/verify" />
+                <data android:pathPrefix="/api/auth/reset-password" />
             </intent-filter>
         </activity>
     </application>
