@@ -2,6 +2,7 @@
 <resources>
     <string name="welcome_to_chirp">Welcome to Chirp!</string>
     <string name="welcome_back">Welcome back!</string>
+    <string name="forgot_password">Forgot password?</string>
     <string name="account_successfully_created">Chirp account successfully created!</string>
     <string name="verification_email_sent_to_x">We've sent a verification email to %1$s</string>
     <string name="resend_verification_email">Resend verification email</string>
@@ -16,8 +17,8 @@
         Unable to verify your email. Maybe the link is invalid or has expired.
     </string>
     <string name="close">Close</string>
+    <string name="submit">Submit</string>
     <string name="username">Username</string>
-    <string name="forgot_password">Forgot password?</string>
     <string name="create_account">Create account</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
@@ -33,4 +34,7 @@
     <string name="error_invalid_username">The username must be between 3 and 20 characters</string>
     <string name="error_invalid_credentials">The email or password is incorrect</string>
     <string name="error_email_not_verified">Unable to login because your email isn't verified</string>
+    <string name="forgot_password_email_sent_successfully">
+        We've successfully sent you an email with a link to reset your password
+    </string>
 </resources>
