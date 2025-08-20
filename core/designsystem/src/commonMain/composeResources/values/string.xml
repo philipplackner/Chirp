@@ -2,4 +2,5 @@
 <resources>
     <string name="hide_password">Hide password</string>
     <string name="show_password">Show password</string>
+    <string name="dismiss_dialog">Dismiss dialog</string>
 </resources>
