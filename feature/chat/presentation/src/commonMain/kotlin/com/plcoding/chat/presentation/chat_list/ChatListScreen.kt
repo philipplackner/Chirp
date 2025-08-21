@@ -18,7 +18,7 @@ fun ChatListScreenRoot(
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Text("Chat list screen")
+        Text("ChatListScreen")
     }
 }
 
