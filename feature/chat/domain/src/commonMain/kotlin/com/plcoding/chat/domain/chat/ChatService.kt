@@ -1,5 +1,11 @@
 package com.plcoding.chat.domain.chat
 
-interface ChatService {
+import com.plcoding.chat.domain.models.Chat
+import com.plcoding.core.domain.util.DataError
+import com.plcoding.core.domain.util.Result
 
+interface ChatService {
+    suspend fun createChat(
+        otherUserIds: List<String>
+    ): Result<Chat, DataError.Remote>
 }
