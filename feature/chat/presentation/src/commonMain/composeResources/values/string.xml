@@ -6,5 +6,7 @@
     <string name="email_or_username">Email or username</string>
     <string name="group_chat">Group chat</string>
     <string name="you">You</string>
+    <string name="profile_settings">Profile settings</string>
+    <string name="logout">Logout</string>
     <string name="error_participant_not_found">No participant found</string>
 </resources>
