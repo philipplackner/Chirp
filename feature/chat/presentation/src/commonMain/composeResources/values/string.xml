@@ -8,5 +8,9 @@
     <string name="you">You</string>
     <string name="profile_settings">Profile settings</string>
     <string name="logout">Logout</string>
+    <string name="no_messages">No messages</string>
+    <string name="no_messages_subtitle">Create new chat to start messaging</string>
+    <string name="do_you_want_to_logout">Do you want to log out?</string>
+    <string name="do_you_want_to_logout_desc">You will have to log in again to use the app.</string>
     <string name="error_participant_not_found">No participant found</string>
 </resources>
