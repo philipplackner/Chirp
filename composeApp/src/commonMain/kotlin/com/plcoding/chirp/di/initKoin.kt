@@ -1,6 +1,7 @@
 package com.plcoding.chirp.di
 
 import com.plcoding.auth.presentation.di.authPresentationModule
+import com.plcoding.chat.data.di.chatDataModule
 import com.plcoding.chat.presentation.di.chatPresentationModule
 import com.plcoding.core.data.di.coreDataModule
 import com.plcoding.core.presentation.di.corePresentationModule
@@ -15,7 +16,8 @@ fun initKoin(config: KoinAppDeclaration? = null) {
             authPresentationModule,
             appModule,
             chatPresentationModule,
-            corePresentationModule
+            corePresentationModule,
+            chatDataModule
         )
     }
 }
