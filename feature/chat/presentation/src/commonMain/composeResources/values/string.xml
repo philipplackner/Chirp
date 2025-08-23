@@ -8,6 +8,11 @@
     <string name="you">You</string>
     <string name="profile_settings">Profile settings</string>
     <string name="logout">Logout</string>
+    <string name="sending">Sending...</string>
+    <string name="sent">Sent</string>
+    <string name="retry">Retry</string>
+    <string name="failed">Failed</string>
+    <string name="delete_for_everyone">Delete for everyone</string>
     <string name="no_messages">No messages</string>
     <string name="no_messages_subtitle">Create new chat to start messaging</string>
     <string name="do_you_want_to_logout">Do you want to log out?</string>
