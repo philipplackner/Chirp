@@ -12,4 +12,5 @@ interface ChatRepository {
     fun getChatInfoById(chatId: String): Flow<ChatInfo>
     suspend fun fetchChats(): Result<List<Chat>, DataError.Remote>
     suspend fun fetchChatById(chatId: String): EmptyResult<DataError.Remote>
+    suspend fun createChat(otherUserIds: List<String>): Result<Chat, DataError.Remote>
 }
