@@ -1,7 +1,10 @@
 package com.plcoding.chat.data.mappers
 
 import com.plcoding.chat.data.dto.ChatMessageDto
+import com.plcoding.chat.database.entities.ChatMessageEntity
+import com.plcoding.chat.database.view.LastMessageView
 import com.plcoding.chat.domain.models.ChatMessage
+import com.plcoding.chat.domain.models.ChatMessageDeliveryStatus
 import kotlin.time.Instant
 
 fun ChatMessageDto.toDomain(): ChatMessage {
@@ -10,6 +13,40 @@ fun ChatMessageDto.toDomain(): ChatMessage {
         chatId = chatId,
         content = content,
         createdAt = Instant.parse(createdAt),
-        senderId = senderId
+        senderId = senderId,
+        deliveryStatus = ChatMessageDeliveryStatus.SENT
+    )
+}
+
+fun LastMessageView.toDomain(): ChatMessage {
+    return ChatMessage(
+        id = messageId,
+        chatId = chatId,
+        content = content,
+        createdAt = Instant.fromEpochMilliseconds(timestamp),
+        senderId = senderId,
+        deliveryStatus = ChatMessageDeliveryStatus.valueOf(this.deliveryStatus)
+    )
+}
+
+fun ChatMessage.toEntity(): ChatMessageEntity {
+    return ChatMessageEntity(
+        messageId = id,
+        chatId = chatId,
+        senderId = senderId,
+        content = content,
+        timestamp = createdAt.toEpochMilliseconds(),
+        deliveryStatus = deliveryStatus.name
+    )
+}
+
+fun ChatMessage.toLastMessageView(): LastMessageView {
+    return LastMessageView(
+        messageId = id,
+        chatId = chatId,
+        senderId = senderId,
+        content = content,
+        timestamp = createdAt.toEpochMilliseconds(),
+        deliveryStatus = deliveryStatus.name
     )
 }

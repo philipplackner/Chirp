@@ -267,7 +267,8 @@ private fun ChatDetailMessagesPreview() {
                         content = "This is a last chat message that was sent by Philipp " +
                                 "and goes over multiple lines to showcase the ellipsis",
                         createdAt = Clock.System.now(),
-                        senderId = "1"
+                        senderId = "1",
+                        deliveryStatus = ChatMessageDeliveryStatus.SENT
                     ),
                     lastMessageSenderUsername = "Philipp"
                 ),

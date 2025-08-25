@@ -28,6 +28,7 @@ import chirp.feature.chat.presentation.generated.resources.Res
 import chirp.feature.chat.presentation.generated.resources.group_chat
 import chirp.feature.chat.presentation.generated.resources.you
 import com.plcoding.chat.domain.models.ChatMessage
+import com.plcoding.chat.domain.models.ChatMessageDeliveryStatus
 import com.plcoding.chat.presentation.components.ChatItemHeaderRow
 import com.plcoding.chat.presentation.model.ChatUi
 import com.plcoding.core.designsystem.components.avatar.ChatParticipantUi
@@ -79,7 +80,7 @@ fun ChatListItemUi(
                             color = MaterialTheme.colorScheme.extended.textSecondary,
                         )
                     ) {
-                        append(chat.lastMessageSenderUsername + ":")
+                        append(chat.lastMessageSenderUsername + ": ")
                     }
                     append(chat.lastMessage.content)
                 }
@@ -135,7 +136,8 @@ fun ChatListItemUiPreview() {
                     content = "This is a last chat message that was sent by Philipp " +
                             "and goes over multiple lines to showcase the ellipsis",
                     createdAt = Clock.System.now(),
-                    senderId = "1"
+                    senderId = "1",
+                    deliveryStatus = ChatMessageDeliveryStatus.SENT
                 ),
                 lastMessageSenderUsername = "Philipp"
             )
