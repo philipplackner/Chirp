@@ -28,6 +28,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.retry
 import kotlinx.coroutines.supervisorScope
 
 class OfflineFirstChatRepository(
@@ -39,7 +40,8 @@ class OfflineFirstChatRepository(
     init {
         observer.isConnected.onEach { isConnected ->
             println("Is app connected? $isConnected")
-        }.launchIn(GlobalScope)
+        }
+            .launchIn(GlobalScope)
     }
 
     override fun getChats(): Flow<List<Chat>> {
