@@ -177,45 +177,44 @@ fun ChatDetailScreen(
                                 },
                                 modifier = Modifier.fillMaxWidth()
                             )
+                        }
+                        MessageList(
+                            messages = state.messages,
+                            listState = messageListState,
+                            onMessageLongClick = { message ->
+                                onAction(ChatDetailAction.OnMessageLongClick(message))
+                            },
+                            onMessageRetryClick = { message ->
+                                onAction(ChatDetailAction.OnRetryClick(message))
+                            },
+                            onDismissMessageMenu = {
+                                onAction(ChatDetailAction.OnDismissMessageMenu)
+                            },
+                            onDeleteMessageClick = { message ->
+                                onAction(ChatDetailAction.OnDeleteMessageClick(message))
+                            },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .weight(1f)
+                        )
 
-                            MessageList(
-                                messages = state.messages,
-                                listState = messageListState,
-                                onMessageLongClick = { message ->
-                                    onAction(ChatDetailAction.OnMessageLongClick(message))
-                                },
-                                onMessageRetryClick = { message ->
-                                    onAction(ChatDetailAction.OnRetryClick(message))
-                                },
-                                onDismissMessageMenu = {
-                                    onAction(ChatDetailAction.OnDismissMessageMenu)
-                                },
-                                onDeleteMessageClick = { message ->
-                                    onAction(ChatDetailAction.OnDeleteMessageClick(message))
+                        AnimatedVisibility(
+                            visible = !configuration.isWideScreen
+                        ) {
+                            MessageBox(
+                                messageTextFieldState = state.messageTextFieldState,
+                                isTextInputEnabled = state.canSendMessage,
+                                connectionState = state.connectionState,
+                                onSendClick = {
+                                    onAction(ChatDetailAction.OnSendMessageClick)
                                 },
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .weight(1f)
+                                    .padding(
+                                        vertical = 8.dp,
+                                        horizontal = 16.dp
+                                    )
                             )
-
-                            AnimatedVisibility(
-                                visible = !configuration.isWideScreen
-                            ) {
-                                MessageBox(
-                                    messageTextFieldState = state.messageTextFieldState,
-                                    isTextInputEnabled = state.canSendMessage,
-                                    connectionState = state.connectionState,
-                                    onSendClick = {
-                                        onAction(ChatDetailAction.OnSendMessageClick)
-                                    },
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(
-                                            vertical = 8.dp,
-                                            horizontal = 16.dp
-                                        )
-                                )
-                            }
                         }
                     }
                 }
