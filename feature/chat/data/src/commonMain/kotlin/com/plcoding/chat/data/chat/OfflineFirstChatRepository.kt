@@ -11,6 +11,7 @@ import com.plcoding.chat.domain.chat.ChatRepository
 import com.plcoding.chat.domain.chat.ChatService
 import com.plcoding.chat.domain.models.Chat
 import com.plcoding.chat.domain.models.ChatInfo
+import com.plcoding.chat.domain.models.ChatParticipant
 import com.plcoding.core.domain.util.DataError
 import com.plcoding.core.domain.util.EmptyResult
 import com.plcoding.core.domain.util.Result
@@ -66,6 +67,13 @@ class OfflineFirstChatRepository(
             .map { it.toDomain() }
     }
 
+    override fun getActiveParticipantsByChatId(chatId: String): Flow<List<ChatParticipant>> {
+        return db.chatDao.getActiveParticipantsByChatId(chatId)
+            .map { participants ->
+                participants.map { it.toDomain() }
+            }
+    }
+
     override suspend fun fetchChats(): Result<List<Chat>, DataError.Remote> {
         return chatService
             .getChats()
@@ -119,6 +127,22 @@ class OfflineFirstChatRepository(
             .leaveChat(chatId)
             .onSuccess {
                 db.chatDao.deleteChatById(chatId)
+            }
+    }
+
+    override suspend fun addParticipantsToChat(
+        chatId: String,
+        userIds: List<String>
+    ): Result<Chat, DataError.Remote> {
+        return chatService
+            .addParticipantsToChat(chatId, userIds)
+            .onSuccess { chat ->
+                db.chatDao.upsertChatWithParticipantsAndCrossRefs(
+                    chat = chat.toEntity(),
+                    participants = chat.participants.map { it.toEntity() },
+                    participantDao = db.chatParticipantDao,
+                    crossRefDao = db.chatParticipantsCrossRefDao
+                )
             }
     }
 
