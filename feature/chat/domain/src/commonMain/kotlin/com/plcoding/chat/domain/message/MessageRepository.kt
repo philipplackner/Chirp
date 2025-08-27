@@ -3,6 +3,7 @@ package com.plcoding.chat.domain.message
 import com.plcoding.chat.domain.models.ChatMessage
 import com.plcoding.chat.domain.models.ChatMessageDeliveryStatus
 import com.plcoding.chat.domain.models.MessageWithSender
+import com.plcoding.chat.domain.models.OutgoingNewMessage
 import com.plcoding.core.domain.util.DataError
 import com.plcoding.core.domain.util.EmptyResult
 import com.plcoding.core.domain.util.Result
@@ -18,6 +19,8 @@ interface MessageRepository {
         chatId: String,
         before: String? = null
     ): Result<List<ChatMessage>, DataError>
+
+    suspend fun sendMessage(message: OutgoingNewMessage): EmptyResult<DataError>
 
     fun getMessagesForChat(chatId: String): Flow<List<MessageWithSender>>
 }

@@ -4,11 +4,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.text.input.TextFieldState
@@ -38,7 +35,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 fun MessageBox(
     messageTextFieldState: TextFieldState,
-    isTextInputEnabled: Boolean,
+    isSendButtonEnabled: Boolean,
     connectionState: ConnectionState,
     onSendClick: () -> Unit,
     modifier: Modifier = Modifier
@@ -48,7 +45,6 @@ fun MessageBox(
         state = messageTextFieldState,
         modifier = modifier,
         placeholder = stringResource(Res.string.send_a_message),
-        enabled = isTextInputEnabled,
         keyboardOptions = KeyboardOptions(
             imeAction = ImeAction.Send
         ),
@@ -76,7 +72,7 @@ fun MessageBox(
             ChirpButton(
                 text = stringResource(Res.string.send),
                 onClick = onSendClick,
-                enabled = isConnected && isTextInputEnabled
+                enabled = isConnected && isSendButtonEnabled
             )
         }
     )
@@ -94,7 +90,7 @@ fun MessageBoxPreview() {
         ) {
             MessageBox(
                 messageTextFieldState = rememberTextFieldState(),
-                isTextInputEnabled = true,
+                isSendButtonEnabled = true,
                 connectionState = ConnectionState.CONNECTED,
                 onSendClick = {},
                 modifier = Modifier
