@@ -97,6 +97,16 @@ class OfflineFirstMessageRepository(
         }
     }
 
+    override suspend fun deleteMessage(messageId: String): EmptyResult<DataError.Remote> {
+        return chatMessageService
+            .deleteMessage(messageId)
+            .onSuccess {
+                applicationScope.launch {
+                    database.chatMessageDao.deleteMessageById(messageId)
+                }.join()
+            }
+    }
+
     override suspend fun updateMessageDeliveryStatus(
         messageId: String,
         status: ChatMessageDeliveryStatus
