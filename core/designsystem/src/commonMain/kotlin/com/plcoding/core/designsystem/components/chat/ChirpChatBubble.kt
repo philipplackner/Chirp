@@ -5,6 +5,7 @@ import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -69,7 +70,8 @@ fun ChirpChatBubble(
                 } else padding,
                 top = padding,
                 bottom = padding
-            ),
+            )
+            .width(IntrinsicSize.Max),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Row(

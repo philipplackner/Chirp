@@ -3,10 +3,8 @@ package com.plcoding.chat.presentation.chat_list_detail
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.plcoding.chat.domain.chat.ChatConnectionClient
-import com.plcoding.chat.presentation.chat_detail.ChatDetailState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
@@ -34,7 +32,7 @@ class ChatListDetailViewModel(
 
     fun onAction(action: ChatListDetailAction) {
         when(action) {
-            is ChatListDetailAction.OnChatClick -> {
+            is ChatListDetailAction.OnSelectChat -> {
                 _state.update { it.copy(
                     selectedChatId = action.chatId
                 ) }

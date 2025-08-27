@@ -19,6 +19,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -48,7 +49,8 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun ChatListRoot(
-    onChatClick: (ChatUi) -> Unit,
+    selectedChatId: String?,
+    onChatClick: (String?) -> Unit,
     onConfirmLogoutClick: () -> Unit,
     onCreateChatClick: () -> Unit,
     onProfileSettingsClick: () -> Unit,
@@ -58,11 +60,15 @@ fun ChatListRoot(
 
     val snackbarHostState = remember { SnackbarHostState() }
 
+    LaunchedEffect(selectedChatId) {
+        viewModel.onAction(ChatListAction.OnSelectChat(selectedChatId))
+    }
+
     ChatListScreen(
         state = state,
         onAction = { action ->
             when(action) {
-                is ChatListAction.OnChatClick -> onChatClick(action.chat)
+                is ChatListAction.OnSelectChat -> onChatClick(action.chatId)
                 ChatListAction.OnConfirmLogout -> onConfirmLogoutClick()
                 ChatListAction.OnCreateChatClick -> onCreateChatClick()
                 ChatListAction.OnProfileSettingsClick -> onProfileSettingsClick()
@@ -156,7 +162,7 @@ fun ChatListScreen(
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .clickable {
-                                        onAction(ChatListAction.OnChatClick(chatUi))
+                                        onAction(ChatListAction.OnSelectChat(chatUi.id))
                                     }
                             )
                             ChirpHorizontalDivider()
