@@ -224,9 +224,6 @@ class KtorWebSocketConnector(
         }
 
         return try {
-            if(Random.nextBoolean()) {
-                throw Exception()
-            }
             currentSession?.send(message)
             Result.Success(Unit)
         } catch(e: Exception) {

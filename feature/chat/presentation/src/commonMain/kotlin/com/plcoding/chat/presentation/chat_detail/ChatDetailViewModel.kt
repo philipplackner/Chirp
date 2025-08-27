@@ -146,6 +146,7 @@ class ChatDetailViewModel(
                 messageId = Uuid.random().toString(),
                 content = content
             )
+            println("Message ID sent: ${message.messageId}")
 
             messageRepository
                 .sendMessage(message)
