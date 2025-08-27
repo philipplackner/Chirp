@@ -50,7 +50,6 @@ fun MessageList(
         ) {
             items(
                 items = messages,
-                key = { it.id }
             ) { message ->
                 MessageListItemUi(
                     messageUi = message,
@@ -60,7 +59,6 @@ fun MessageList(
                     onRetryClick = onMessageRetryClick,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .animateItem()
                 )
             }
         }
