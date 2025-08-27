@@ -66,6 +66,38 @@ class OfflineFirstMessageRepository(
         }
     }
 
+    override suspend fun retryMessage(messageId: String): EmptyResult<DataError> {
+        return safeDatabaseUpdate {
+            val message = database.chatMessageDao.getMessageById(messageId)
+                ?: return Result.Failure(DataError.Local.NOT_FOUND)
+
+            database.chatMessageDao.upsertMessage(
+                message.copy(
+                    deliveryStatus = ChatMessageDeliveryStatus.SENDING.name,
+                    timestamp = Clock.System.now().toEpochMilliseconds()
+                )
+            )
+
+            val outgoingNewMessage = OutgoingWebSocketDto.NewMessage(
+                chatId = message.chatId,
+                messageId = messageId,
+                content = message.content
+            )
+            return webSocketConnector
+                .sendMessage(outgoingNewMessage.toJsonPayload())
+                .onFailure {
+                    applicationScope.launch {
+                        database.chatMessageDao.upsertMessage(
+                            message.copy(
+                                deliveryStatus = ChatMessageDeliveryStatus.FAILED.name,
+                                timestamp = Clock.System.now().toEpochMilliseconds()
+                            )
+                        )
+                    }.join()
+                }
+        }
+    }
+
     override suspend fun updateMessageDeliveryStatus(
         messageId: String,
         status: ChatMessageDeliveryStatus

@@ -45,6 +45,7 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import kotlin.coroutines.coroutineContext
 import kotlin.math.log
+import kotlin.random.Random
 import kotlin.time.Duration.Companion.seconds
 
 class KtorWebSocketConnector(
@@ -223,6 +224,9 @@ class KtorWebSocketConnector(
         }
 
         return try {
+            if(Random.nextBoolean()) {
+                throw Exception()
+            }
             currentSession?.send(message)
             Result.Success(Unit)
         } catch(e: Exception) {
