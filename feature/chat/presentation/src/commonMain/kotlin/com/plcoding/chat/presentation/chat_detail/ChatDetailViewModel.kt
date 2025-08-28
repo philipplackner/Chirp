@@ -2,7 +2,6 @@
 
 package com.plcoding.chat.presentation.chat_detail
 
-import androidx.compose.animation.core.snap
 import androidx.compose.foundation.text.input.clearText
 import androidx.compose.runtime.snapshotFlow
 import androidx.lifecycle.ViewModel
@@ -14,8 +13,10 @@ import com.plcoding.chat.domain.models.ChatMessage
 import com.plcoding.chat.domain.models.ConnectionState
 import com.plcoding.chat.domain.models.OutgoingNewMessage
 import com.plcoding.chat.presentation.mappers.toUi
+import com.plcoding.chat.presentation.mappers.toUiList
 import com.plcoding.chat.presentation.model.MessageUi
 import com.plcoding.core.domain.auth.SessionStorage
+import com.plcoding.core.domain.util.DataError
 import com.plcoding.core.domain.util.DataErrorException
 import com.plcoding.core.domain.util.Paginator
 import com.plcoding.core.domain.util.onFailure
@@ -37,6 +38,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlin.random.Random
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
@@ -90,7 +92,7 @@ class ChatDetailViewModel(
 
         currentState.copy(
             chatUi = chatInfo.chat.toUi(authInfo.user.id),
-            messages = chatInfo.messages.map { it.toUi(authInfo.user.id) }
+            messages = chatInfo.messages.toUiList(authInfo.user.id)
         )
     }
 
@@ -128,9 +130,20 @@ class ChatDetailViewModel(
             ChatDetailAction.OnLeaveChatClick -> onLeaveChatClick()
             is ChatDetailAction.OnMessageLongClick -> onMessageLongClick(action.message)
             is ChatDetailAction.OnRetryClick -> retryMessage(action.message)
-            ChatDetailAction.OnScrollToTop -> {}
+            ChatDetailAction.OnScrollToTop -> onScrollToTop()
             ChatDetailAction.OnSendMessageClick -> sendMessage()
+            ChatDetailAction.OnRetryPaginationClick -> retryPagination()
             else -> Unit
+        }
+    }
+
+    private fun retryPagination() = loadNextItems()
+
+    private fun onScrollToTop() = loadNextItems()
+
+    private fun loadNextItems() {
+        viewModelScope.launch {
+            currentPaginator?.loadNextItems()
         }
     }
 
@@ -179,7 +192,6 @@ class ChatDetailViewModel(
                 messageId = Uuid.random().toString(),
                 content = content
             )
-            println("Message ID sent: ${message.messageId}")
 
             messageRepository
                 .sendMessage(message)
@@ -234,9 +246,7 @@ class ChatDetailViewModel(
             .connectionState
             .onEach { connectionState ->
                 if (connectionState == ConnectionState.CONNECTED) {
-                    _chatId.value?.let {
-                        messageRepository.fetchMessages(it, before = null)
-                    }
+                    currentPaginator?.loadNextItems()
                 }
 
                 _state.update {
@@ -262,14 +272,15 @@ class ChatDetailViewModel(
             },
             onError = { throwable ->
                 if(throwable is DataErrorException) {
-                    eventChannel.send(
-                        ChatDetailEvent.OnError(throwable.error.toUiText())
-                    )
+                    _state.update { it.copy(
+                        paginationError = throwable.error.toUiText()
+                    ) }
                 }
             },
             onSuccess = { messages, _ ->
                 _state.update { it.copy(
-                    endReached = messages.isEmpty()
+                    endReached = messages.isEmpty(),
+                    paginationError = null
                 ) }
             }
         )
@@ -278,10 +289,6 @@ class ChatDetailViewModel(
             endReached = false,
             isPaginationLoading = false,
         ) }
-
-        viewModelScope.launch {
-            currentPaginator?.loadNextItems()
-        }
     }
 
     private fun onLeaveChatClick() {
