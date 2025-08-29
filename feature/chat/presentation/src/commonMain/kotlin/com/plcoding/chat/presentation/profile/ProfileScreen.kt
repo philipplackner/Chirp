@@ -6,10 +6,13 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Icon
@@ -48,7 +51,9 @@ import com.plcoding.core.designsystem.components.dialogs.DestructiveConfirmation
 import com.plcoding.core.designsystem.components.textfields.ChirpPasswordTextField
 import com.plcoding.core.designsystem.components.textfields.ChirpTextField
 import com.plcoding.core.designsystem.theme.ChirpTheme
+import com.plcoding.core.presentation.util.DeviceConfiguration
 import com.plcoding.core.presentation.util.clearFocusOnTap
+import com.plcoding.core.presentation.util.currentDeviceConfiguration
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -85,11 +90,12 @@ fun ProfileScreen(
     Column(
         modifier = Modifier
             .clearFocusOnTap()
-            .fillMaxWidth()
+            .fillMaxSize()
             .background(
                 color = MaterialTheme.colorScheme.surface,
                 shape = RoundedCornerShape(16.dp)
             )
+            .verticalScroll(rememberScrollState())
     ) {
         ProfileHeaderSection(
             username = state.username,
@@ -223,7 +229,13 @@ fun ProfileScreen(
                 )
             }
         }
-        Spacer(modifier = Modifier.weight(1f))
+        val deviceConfiguration = currentDeviceConfiguration()
+        if(deviceConfiguration in listOf(
+                DeviceConfiguration.MOBILE_PORTRAIT,
+                DeviceConfiguration.MOBILE_LANDSCAPE
+        )) {
+            Spacer(modifier = Modifier.weight(1f))
+        }
     }
 
     if(state.showDeleteConfirmationDialog) {

@@ -50,10 +50,6 @@
     <string name="new_password">New password</string>
     <string name="password_hint">Use 9+ characters, at least one digit and one uppercase letter</string>
     <string name="delete_profile_picture">Delete profile image</string>
-    <string name="delete_profile_picture_desc">
-        Are you sure you want to delete your profile picture? This action cannot be undone.
-    </string>
-    <string name="contact_chirp_support_change_email">
-        Contact the Chirp support to change your email.
-    </string>
+    <string name="delete_profile_picture_desc">Are you sure you want to delete your profile picture? This action cannot be undone.</string>
+    <string name="contact_chirp_support_change_email">Contact the Chirp support to change your email.</string>
 </resources>
