@@ -1,5 +1,6 @@
 package com.plcoding.chat.presentation.profile
 
+import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.foundation.text.input.clearText
 import androidx.compose.runtime.snapshotFlow
 import androidx.lifecycle.ViewModel
@@ -7,7 +8,9 @@ import androidx.lifecycle.viewModelScope
 import chirp.feature.chat.presentation.generated.resources.Res
 import chirp.feature.chat.presentation.generated.resources.error_current_password_equal_to_new_one
 import chirp.feature.chat.presentation.generated.resources.error_current_password_incorrect
+import com.plcoding.chat.domain.participant.ChatParticipantRepository
 import com.plcoding.core.domain.auth.AuthService
+import com.plcoding.core.domain.auth.SessionStorage
 import com.plcoding.core.domain.util.DataError
 import com.plcoding.core.domain.util.onFailure
 import com.plcoding.core.domain.util.onSuccess
@@ -26,16 +29,30 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class ProfileViewModel(
-    private val authService: AuthService
+    private val authService: AuthService,
+    private val chatParticipantRepository: ChatParticipantRepository,
+    private val sessionStorage: SessionStorage
 ) : ViewModel() {
 
     private var hasLoadedInitialData = false
 
     private val _state = MutableStateFlow(ProfileState())
-    val state = _state
+    val state = combine(
+        _state,
+        sessionStorage.observeAuthInfo()
+    ) { currentState, authInfo ->
+        if(authInfo != null) {
+            currentState.copy(
+                username = authInfo.user.username,
+                emailTextState = TextFieldState(initialText = authInfo.user.email),
+                profilePictureUrl = authInfo.user.profilePictureUrl,
+            )
+        } else currentState
+    }
         .onStart {
             if (!hasLoadedInitialData) {
                 observeCanChangePassword()
+                fetchLocalParticipantDetails()
                 hasLoadedInitialData = true
             }
         }
@@ -51,6 +68,12 @@ class ProfileViewModel(
             is ProfileAction.OnToggleCurrentPasswordVisibility -> toggleCurrentPasswordVisibility()
             is ProfileAction.OnToggleNewPasswordVisibility -> toggleNewPasswordVisibility()
             else -> Unit
+        }
+    }
+
+    private fun fetchLocalParticipantDetails() {
+        viewModelScope.launch {
+            chatParticipantRepository.fetchLocalParticipant()
         }
     }
 
