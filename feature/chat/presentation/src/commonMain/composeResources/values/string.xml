@@ -52,4 +52,7 @@
     <string name="delete_profile_picture">Delete profile image</string>
     <string name="delete_profile_picture_desc">Are you sure you want to delete your profile picture? This action cannot be undone.</string>
     <string name="contact_chirp_support_change_email">Contact the Chirp support to change your email.</string>
+    <string name="password_change_successful">You've successfully changed your password!</string>
+    <string name="error_current_password_incorrect">Your current password is not correct</string>
+    <string name="error_current_password_equal_to_new_one">Your new password can't be equal to the old one.</string>
 </resources>
