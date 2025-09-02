@@ -10,6 +10,7 @@ import chirp.feature.chat.presentation.generated.resources.error_current_passwor
 import chirp.feature.chat.presentation.generated.resources.error_current_password_incorrect
 import chirp.feature.chat.presentation.generated.resources.error_invalid_file_type
 import com.plcoding.chat.domain.participant.ChatParticipantRepository
+import com.plcoding.chat.domain.participant.ChatParticipantService
 import com.plcoding.core.domain.auth.AuthService
 import com.plcoding.core.domain.auth.SessionStorage
 import com.plcoding.core.domain.util.DataError
@@ -32,7 +33,7 @@ import kotlinx.coroutines.launch
 class ProfileViewModel(
     private val authService: AuthService,
     private val chatParticipantRepository: ChatParticipantRepository,
-    private val sessionStorage: SessionStorage
+    private val sessionStorage: SessionStorage,
 ) : ViewModel() {
 
     private var hasLoadedInitialData = false
@@ -70,8 +71,51 @@ class ProfileViewModel(
             is ProfileAction.OnToggleCurrentPasswordVisibility -> toggleCurrentPasswordVisibility()
             is ProfileAction.OnToggleNewPasswordVisibility -> toggleNewPasswordVisibility()
             is ProfileAction.OnPictureSelected -> uploadProfilePicture(action.bytes, action.mimeType)
+            is ProfileAction.OnDeletePictureClick -> showDeleteConfirmation()
+            is ProfileAction.OnConfirmDeleteClick -> deleteProfilePicture()
+            is ProfileAction.OnDismissDeleteConfirmationDialogClick -> dismissDeleteConfirmation()
             else -> Unit
         }
+    }
+
+    private fun deleteProfilePicture() {
+        if(state.value.isDeletingImage && state.value.profilePictureUrl == null) {
+            return
+        }
+
+        _state.update { it.copy(
+            isDeletingImage = true,
+            imageError = null,
+            showDeleteConfirmationDialog = false
+        ) }
+
+        viewModelScope.launch {
+            chatParticipantRepository
+                .deleteProfilePicture()
+                .onSuccess {
+                    _state.update { it.copy(
+                        isDeletingImage = false
+                    ) }
+                }
+                .onFailure { error ->
+                    _state.update { it.copy(
+                        imageError = error.toUiText(),
+                        isDeletingImage = false
+                    ) }
+                }
+        }
+    }
+
+    private fun dismissDeleteConfirmation() {
+        _state.update { it.copy(
+            showDeleteConfirmationDialog = false
+        ) }
+    }
+
+    private fun showDeleteConfirmation() {
+        _state.update { it.copy(
+            showDeleteConfirmationDialog = true
+        )}
     }
 
     private fun uploadProfilePicture(bytes: ByteArray, mimeType: String?) {
