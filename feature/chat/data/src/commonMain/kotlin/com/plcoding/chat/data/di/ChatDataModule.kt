@@ -11,6 +11,7 @@ import com.plcoding.chat.data.message.OfflineFirstMessageRepository
 import com.plcoding.chat.data.network.ConnectionErrorHandler
 import com.plcoding.chat.data.network.ConnectionRetryHandler
 import com.plcoding.chat.data.network.KtorWebSocketConnector
+import com.plcoding.chat.data.notification.KtorDeviceTokenService
 import com.plcoding.chat.data.participant.OfflineFirstChatParticipantRepository
 import com.plcoding.chat.database.DatabaseFactory
 import com.plcoding.chat.domain.chat.ChatConnectionClient
@@ -19,6 +20,7 @@ import com.plcoding.chat.domain.chat.ChatRepository
 import com.plcoding.chat.domain.chat.ChatService
 import com.plcoding.chat.domain.message.ChatMessageService
 import com.plcoding.chat.domain.message.MessageRepository
+import com.plcoding.chat.domain.notification.DeviceTokenService
 import com.plcoding.chat.domain.participant.ChatParticipantRepository
 import kotlinx.serialization.json.Json
 import org.koin.core.module.Module
@@ -39,6 +41,7 @@ val chatDataModule = module {
     singleOf(::ConnectionRetryHandler)
     singleOf(::KtorWebSocketConnector)
     singleOf(::KtorChatMessageService) bind ChatMessageService::class
+    singleOf(::KtorDeviceTokenService) bind DeviceTokenService::class
     singleOf(::OfflineFirstChatParticipantRepository) bind ChatParticipantRepository::class
     single {
         Json {

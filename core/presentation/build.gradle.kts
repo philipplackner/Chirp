@@ -20,8 +20,6 @@ kotlin {
                 implementation(libs.bundles.koin.common)
 
                 implementation(compose.components.resources)
-
-
             }
         }
 
