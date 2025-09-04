@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="welcome_to_chirp">Welcome to Chirp!</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="set_new_password">Set a new password</string>
+    <string name="new_password">New password</string>
+    <string name="account_successfully_created">Chirp account successfully created!</string>
+    <string name="verification_email_sent_to_x">We've sent a verification email to %1$s</string>
+    <string name="resend_verification_email">Resend verification email</string>
+    <string name="resent_verification_email">Successfully resent verification email</string>
+    <string name="verifying_account">Verifying account...</string>
+    <string name="email_verified_successfully">Email verified successfully!</string>
+    <string name="email_verified_failed">Failed to verify your email</string>
+    <string name="email_verified_successfully_desc">
+        Your email has been verified. You can now log in with your credentials.
+    </string>
+    <string name="email_verified_failed_desc">
+        Unable to verify your email. Maybe the link is invalid or has expired.
+    </string>
+    <string name="close">Close</string>
+    <string name="submit">Submit</string>
+    <string name="username">Username</string>
+    <string name="create_account">Create account</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="username_placeholder">Chirp</string>
+    <string name="email_placeholder">hello@chirp.com</string>
+    <string name="login">Log In</string>
+    <string name="username_hint">Use between 3 and 20 characters for your username</string>
+    <string name="password_hint">Use 9+ characters, at least one digit and one uppercase letter</string>
+    <string name="error_account_exists">An account with that email or username already exists</string>
+    <string name="error_invalid_password">Password must be at least 9 characters and include one digit and one uppercase letter</string>
+    <string name="error_invalid_email">This is not a valid email</string>
+    <string name="error_invalid_username">The username must be between 3 and 20 characters</string>
+    <string name="error_invalid_credentials">The email or password is incorrect</string>
+    <string name="error_email_not_verified">Unable to login because your email isn't verified</string>
+    <string name="error_same_password">The new password can't be equal to the old one</string>
+    <string name="error_reset_password_token_invalid">
+        It seems like the reset password link is not valid or has expired. Please request a new email.
+    </string>
+    <string name="forgot_password_email_sent_successfully">
+        We've successfully sent you an email with a link to reset your password
+    </string>
+    <string name="reset_password_successfully">
+        Your password has successfully been changed. You can now log in with your new password.
+    </string>
+</resources>

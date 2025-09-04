@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="error_disk_full">Oops, it looks like your storage is full!</string>
+    <string name="error_not_found">Couldn't find the requested item</string>
+    <string name="error_unknown">An unknown error happened</string>
+    <string name="error_bad_request">Bad request</string>
+    <string name="error_request_timeout">Your request has timed out</string>
+    <string name="error_unauthorized">Invalid credentials</string>
+    <string name="error_forbidden">You're not allowed to do that</string>
+    <string name="error_conflict">A conflict happened</string>
+    <string name="error_too_many_requests">You've hit the rate limit</string>
+    <string name="error_no_internet">Unable to connect. Please check your internet connection.</string>
+    <string name="error_payload_too_large">The file you've attached is too large</string>
+    <string name="error_server">Oops, a server-side error happened</string>
+    <string name="error_service_unavailable">Service unavailable, please try again later</string>
+    <string name="error_serialization">Serialization error</string>
+    <string name="error_unable_to_send_message">An error happened while sending the message</string>
+</resources>
