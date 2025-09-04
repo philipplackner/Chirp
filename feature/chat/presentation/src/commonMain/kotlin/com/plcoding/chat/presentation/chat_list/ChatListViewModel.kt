@@ -73,7 +73,6 @@ class ChatListViewModel(
                     isUserMenuOpen = true
                 ) }
             }
-            ChatListAction.OnProfileSettingsClick,
             ChatListAction.OnLogoutClick -> showLogoutConfirmation()
             ChatListAction.OnConfirmLogout -> logout()
             ChatListAction.OnDismissLogoutDialog -> {
@@ -81,6 +80,7 @@ class ChatListViewModel(
                     showLogoutConfirmation = false
                 ) }
             }
+            ChatListAction.OnProfileSettingsClick,
             ChatListAction.OnDismissUserMenu -> {
                 _state.update { it.copy(
                     isUserMenuOpen = false
