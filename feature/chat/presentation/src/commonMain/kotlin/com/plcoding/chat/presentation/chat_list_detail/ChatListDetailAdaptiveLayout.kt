@@ -79,7 +79,7 @@ fun ChatListDetailAdaptiveLayout(
                             )
                         }
                     },
-                    onConfirmLogoutClick = onLogout,
+                    onSuccessfulLogout = onLogout,
                     onCreateChatClick = {
                         chatListDetailViewModel.onAction(ChatListDetailAction.OnCreateChatClick)
                     },

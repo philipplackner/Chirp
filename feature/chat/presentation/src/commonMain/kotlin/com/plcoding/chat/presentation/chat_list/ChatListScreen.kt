@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -37,7 +38,6 @@ import chirp.feature.chat.presentation.generated.resources.no_chats_subtitle
 import com.plcoding.chat.presentation.chat_list.components.ChatListHeader
 import com.plcoding.chat.presentation.chat_list.components.ChatListItemUi
 import com.plcoding.chat.presentation.components.EmptySection
-import com.plcoding.chat.presentation.model.ChatUi
 import com.plcoding.core.designsystem.components.brand.ChirpHorizontalDivider
 import com.plcoding.core.designsystem.components.buttons.ChirpFloatingActionButton
 import com.plcoding.core.designsystem.components.dialogs.DestructiveConfirmationDialog
@@ -45,6 +45,8 @@ import com.plcoding.core.designsystem.theme.ChirpTheme
 import com.plcoding.core.designsystem.theme.extended
 import com.plcoding.core.presentation.permissions.Permission
 import com.plcoding.core.presentation.permissions.rememberPermissionController
+import com.plcoding.core.presentation.util.ObserveAsEvents
+import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
@@ -53,7 +55,7 @@ import org.koin.compose.viewmodel.koinViewModel
 fun ChatListRoot(
     selectedChatId: String?,
     onChatClick: (String?) -> Unit,
-    onConfirmLogoutClick: () -> Unit,
+    onSuccessfulLogout: () -> Unit,
     onCreateChatClick: () -> Unit,
     onProfileSettingsClick: () -> Unit,
     viewModel: ChatListViewModel = koinViewModel()
@@ -66,12 +68,26 @@ fun ChatListRoot(
         viewModel.onAction(ChatListAction.OnSelectChat(selectedChatId))
     }
 
+    val scope = rememberCoroutineScope()
+    ObserveAsEvents(viewModel.events) { event ->
+        when(event) {
+            is ChatListEvent.OnLogoutError -> {
+                scope.launch {
+                    snackbarHostState.showSnackbar(
+                        message = event.error.asStringAsync()
+                    )
+                }
+            }
+            ChatListEvent.OnLogoutSuccess -> onSuccessfulLogout()
+        }
+    }
+
     ChatListScreen(
         state = state,
         onAction = { action ->
             when(action) {
                 is ChatListAction.OnSelectChat -> onChatClick(action.chatId)
-                ChatListAction.OnConfirmLogout -> onConfirmLogoutClick()
+                ChatListAction.OnConfirmLogout -> onSuccessfulLogout()
                 ChatListAction.OnCreateChatClick -> onCreateChatClick()
                 ChatListAction.OnProfileSettingsClick -> onProfileSettingsClick()
                 else -> Unit
