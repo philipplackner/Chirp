@@ -10,6 +10,7 @@ import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun ChirpBottomSheet(
@@ -30,7 +31,7 @@ fun ChirpBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
         dragHandle = null,
-        contentWindowInsets = { WindowInsets() },
+        contentWindowInsets = { WindowInsets(left = 0.dp) },
         modifier = modifier.statusBarsPadding(),
     ) {
         content()
