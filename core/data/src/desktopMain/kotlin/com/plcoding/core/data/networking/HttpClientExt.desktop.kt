@@ -8,5 +8,5 @@ actual suspend fun <T> platformSafeCall(
     execute: suspend () -> HttpResponse,
     handleResponse: suspend (HttpResponse) -> Result<T, DataError.Remote>
 ): Result<T, DataError.Remote> {
-    TODO("Not yet implemented")
+    return Result.Failure(DataError.Remote.SERVER_ERROR)
 }

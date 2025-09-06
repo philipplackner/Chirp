@@ -28,6 +28,12 @@ kotlin {
             }
         }
 
+        desktopMain {
+            dependencies {
+                implementation(libs.ktor.client.okhttp)
+            }
+        }
+
         androidMain {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
