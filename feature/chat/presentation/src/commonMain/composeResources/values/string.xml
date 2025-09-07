@@ -30,6 +30,7 @@
     <string name="network_error">Network error</string>
     <string name="unknown_error">Unknown error</string>
     <string name="send_a_message">Send a message</string>
+    <string name="select_a_profile_picture">Select a profile picture</string>
     <string name="send">Send</string>
     <string name="delete_for_everyone">Delete for everyone</string>
     <string name="no_chats">No chats</string>
@@ -38,6 +39,7 @@
     <string name="no_messages_subtitle">Be the first one to send a message!</string>
     <string name="do_you_want_to_logout">Do you want to log out?</string>
     <string name="do_you_want_to_logout_desc">You will have to log in again to use the app.</string>
+    <string name="drop_picture_info">Drop your image here to upload as your new profile picture</string>
     <string name="error_participant_not_found">No participant found</string>
 
     <string name="profile_settings">Profile settings</string>
