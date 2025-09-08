@@ -10,6 +10,7 @@ import com.plcoding.core.domain.auth.SessionStorage
 import com.plcoding.core.domain.util.onFailure
 import com.plcoding.core.domain.util.onSuccess
 import com.plcoding.core.presentation.util.toUiText
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,7 +27,8 @@ class ChatListViewModel(
     private val repository: ChatRepository,
     private val sessionStorage: SessionStorage,
     private val deviceTokenService: DeviceTokenService,
-    private val authService: AuthService
+    private val authService: AuthService,
+    private val applicationScope: CoroutineScope
 ) : ViewModel() {
 
     private val eventChannel = Channel<ChatListEvent>()
@@ -106,8 +108,10 @@ class ChatListViewModel(
                         .logout(refreshToken)
                         .onSuccess {
                             sessionStorage.set(null)
-                            repository.deleteAllChats()
                             eventChannel.send(ChatListEvent.OnLogoutSuccess)
+                            applicationScope.launch {
+                                repository.deleteAllChats()
+                            }
                         }
                         .onFailure { error ->
                             eventChannel.send(ChatListEvent.OnLogoutError(error.toUiText()))
