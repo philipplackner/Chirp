@@ -5,6 +5,7 @@ composeBom = "2025.07.00"
 kotlin = "2.2.0"
 ksp = "2.2.0-2.0.2"
 google-services = "4.4.3"
+conveyor = "1.12"
 
 androidDesugarJdkLibs = "2.1.5"
 androidTools = "31.12.0"
@@ -204,6 +205,7 @@ room = { id = "androidx.room", version.ref = "room" }
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 buildkonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
+conveyor = { id = "dev.hydraulic.conveyor", version.ref = "conveyor" }
 
 [bundles]
 koin-common = [
