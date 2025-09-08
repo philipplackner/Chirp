@@ -74,13 +74,15 @@ fun ChatListItemUi(
 
             if (chat.lastMessage != null) {
                 val previewMessage = buildAnnotatedString {
-                    withStyle(
-                        style = SpanStyle(
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.extended.textSecondary,
-                        )
-                    ) {
-                        append(chat.lastMessageSenderUsername + ": ")
+                    if (chat.lastMessageSenderUsername != null) {
+                        withStyle(
+                            style = SpanStyle(
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.extended.textSecondary,
+                            )
+                        ) {
+                            append("${chat.lastMessageSenderUsername}: ")
+                        }
                     }
                     append(chat.lastMessage.content)
                 }

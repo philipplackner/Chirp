@@ -16,11 +16,15 @@ typealias DataMessageWithSender = MessageWithSender
 typealias DomainMessageWithSender = com.plcoding.chat.domain.models.MessageWithSender
 
 fun ChatDto.toDomain(): Chat {
+    val lastMessageSenderUsername = lastMessage?.let { msg ->
+        participants.find { it.userId == msg.senderId }?.username
+    }
     return Chat(
         id = id,
         participants = participants.map { it.toDomain() },
         lastActivityAt = Instant.parse(lastActivityAt),
-        lastMessage = lastMessage?.toDomain()
+        lastMessage = lastMessage?.toDomain(),
+        lastMessageSenderUsername = lastMessageSenderUsername
     )
 }
 
@@ -32,7 +36,10 @@ fun ChatEntity.toDomain(
         id = chatId,
         participants = participants,
         lastActivityAt = Instant.fromEpochMilliseconds(lastActivityAt),
-        lastMessage = lastMessage
+        lastMessage = lastMessage,
+        lastMessageSenderUsername = lastMessage?.let { msg ->
+            participants.find { it.userId == msg.senderId }?.username
+        }
     )
 }
 
@@ -41,7 +48,8 @@ fun ChatWithParticipants.toDomain(): Chat {
         id = chat.chatId,
         participants = participants.map { it.toDomain() },
         lastActivityAt = Instant.fromEpochMilliseconds(chat.lastActivityAt),
-        lastMessage = lastMessage?.toDomain()
+        lastMessage = lastMessage?.toDomain(),
+        lastMessageSenderUsername = lastMessage?.senderUsername
     )
 }
 
