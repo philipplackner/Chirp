@@ -1,8 +1,10 @@
 package com.plcoding.chat.data.lifecycle
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.flowOn
 import platform.Foundation.NSNotificationCenter
 import platform.Foundation.NSOperationQueue
 import platform.UIKit.UIApplication
@@ -22,7 +24,7 @@ actual class AppLifecycleObserver {
             UIApplicationState.UIApplicationStateInactive -> true
             else -> false
         }
-        send(isCurrentlyInForeground)
+        trySend(isCurrentlyInForeground)
 
         val notificationCenter = NSNotificationCenter.defaultCenter
 
@@ -64,5 +66,5 @@ actual class AppLifecycleObserver {
             notificationCenter.removeObserver(backgroundObserver)
             notificationCenter.removeObserver(willResignActiveObserver)
         }
-    }
+    }.flowOn(Dispatchers.Main)
 }
