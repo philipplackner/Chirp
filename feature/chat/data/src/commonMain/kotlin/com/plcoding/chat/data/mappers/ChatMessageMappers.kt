@@ -55,14 +55,15 @@ fun ChatMessage.toEntity(): ChatMessageEntity {
     )
 }
 
-fun ChatMessage.toLastMessageView(): LastMessageView {
+fun ChatMessage.toLastMessageView(senderUsername: String? = null): LastMessageView {
     return LastMessageView(
         messageId = id,
         chatId = chatId,
         senderId = senderId,
         content = content,
         timestamp = createdAt.toEpochMilliseconds(),
-        deliveryStatus = deliveryStatus.name
+        deliveryStatus = deliveryStatus.name,
+        senderUsername = senderUsername
     )
 }
 

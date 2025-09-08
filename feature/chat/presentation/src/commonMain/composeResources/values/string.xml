@@ -56,4 +56,5 @@
     <string name="error_current_password_incorrect">Your current password is not correct</string>
     <string name="error_current_password_equal_to_new_one">Your new password can't be equal to the old one.</string>
     <string name="error_invalid_file_type">This file type is not supported.</string>
+    <string name="you_are_alone_in_this_chat">Just you here!</string>
 </resources>
