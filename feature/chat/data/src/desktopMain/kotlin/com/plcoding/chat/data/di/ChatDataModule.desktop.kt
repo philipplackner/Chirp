@@ -3,6 +3,7 @@ package com.plcoding.chat.data.di
 import com.plcoding.chat.data.lifecycle.AppLifecycleObserver
 import com.plcoding.chat.data.network.ConnectionErrorHandler
 import com.plcoding.chat.data.network.ConnectivityObserver
+import com.plcoding.chat.data.notification.DesktopNotifier
 import com.plcoding.chat.data.notification.FirebasePushNotificationService
 import com.plcoding.chat.database.DatabaseFactory
 import com.plcoding.chat.domain.notification.PushNotificationService
@@ -15,5 +16,6 @@ actual val platformChatDataModule = module {
     singleOf(::ConnectionErrorHandler)
     singleOf(::ConnectivityObserver)
     singleOf(::AppLifecycleObserver)
+    singleOf(::DesktopNotifier)
     singleOf(::FirebasePushNotificationService) bind PushNotificationService::class
 }
