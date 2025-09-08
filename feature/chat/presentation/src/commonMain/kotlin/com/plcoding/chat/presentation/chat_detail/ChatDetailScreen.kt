@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.material3.MaterialTheme
@@ -105,6 +106,13 @@ fun ChatDetailRoot(
 
     LaunchedEffect(chatId) {
         viewModel.onAction(ChatDetailAction.OnSelectChat(chatId))
+    }
+    
+    // Reset scroll position when chatId changes and messages are available
+    LaunchedEffect(chatId, state.messages) {
+        if (state.messages.isNotEmpty()) {
+            messageListState.scrollToItem(0)
+        }
     }
 
     BackHandler(
