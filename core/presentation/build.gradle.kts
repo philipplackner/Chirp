@@ -17,34 +17,17 @@ kotlin {
                 implementation(projects.core.domain)
 
                 implementation(libs.material3.adaptive)
+                implementation(libs.jetbrains.lifecycle.compose)
                 implementation(libs.bundles.koin.common)
 
                 implementation(compose.components.resources)
             }
         }
 
-        val mobileMain by creating {
-            dependencies {
-                implementation(libs.moko.permissions)
-                implementation(libs.moko.permissions.compose)
-                implementation(libs.moko.permissions.notifications)
-            }
-            dependsOn(commonMain.get())
-        }
-        androidMain.get().dependsOn(mobileMain)
-
-        val iosMain by creating {
-            dependsOn(mobileMain)
-        }
-
-        listOf(
-            iosArm64(),
-            iosX64(),
-            iosSimulatorArm64()
-        ).forEach { target ->
-            getByName("${target.name}Main") {
-                dependsOn(iosMain)
-            }
+        mobileMain.dependencies {
+            implementation(libs.moko.permissions)
+            implementation(libs.moko.permissions.compose)
+            implementation(libs.moko.permissions.notifications)
         }
     }
 

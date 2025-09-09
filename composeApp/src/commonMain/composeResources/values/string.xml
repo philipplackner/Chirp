@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="file">File</string>
+    <string name="new_window">New window</string>
+    <string name="app_theme">App theme</string>
+</resources>

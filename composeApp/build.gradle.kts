@@ -2,7 +2,10 @@ plugins {
     alias(libs.plugins.convention.cmp.application)
     alias(libs.plugins.compose.hot.reload)
     alias(libs.plugins.google.services)
+    alias(libs.plugins.conveyor)
 }
+
+version = "1.0.0"
 
 kotlin {
     sourceSets {
@@ -39,6 +42,34 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.compose.viewmodel)
             implementation(libs.jetbrains.lifecycle.compose)
+        }
+
+        desktopMain.dependencies {
+            implementation(projects.core.presentation)
+            implementation(compose.desktop.currentOs)
+            implementation(libs.kotlinx.coroutines.swing)
+            implementation(libs.kotlin.stdlib)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
+            implementation(libs.koin.compose.viewmodel)
+            implementation(libs.jsystemthemedetector)
+
+            implementation(compose.desktop.linux_x64)
+            implementation(compose.desktop.linux_arm64)
+            implementation(compose.desktop.macos_x64)
+            implementation(compose.desktop.macos_arm64)
+            implementation(compose.desktop.windows_x64)
+            implementation(compose.desktop.windows_arm64)
+        }
+    }
+}
+
+compose.desktop {
+    application {
+        mainClass = "com.plcoding.chirp.MainKt"
+
+        nativeDistributions {
+            packageName = "com.plcoding.chirp"
         }
     }
 }
