@@ -49,11 +49,24 @@ Then build the project and you're ready to use it.
 
 ## Technology Stack
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/dec2400b-4f4b-442f-ab0c-425510db847c" 
-       alt="kmp-cmp" 
-       width="300" />
-</p>
+<table>
+  <tr>
+    <td align="center" width="120" height="120">
+      <img src="https://github.com/user-attachments/assets/59036eab-e126-41f7-bf3d-29185d67f3b1" width="60" height="60" alt="Kotlin Multiplatform" />
+      <br><strong>Kotlin</strong><br>Multiplatform
+    </td>
+    <td align="center" width="120" height="120">
+      <img src="https://github.com/user-attachments/assets/cb037308-f7cf-4f13-8c82-cecb9cba43a4" width="60" height="60" alt="Compose Multiplatform" />
+      <br><strong>Compose</strong><br>Multiplatform
+    </td>
+    <td align="center" width="120" height="120">
+      <img src="https://github.com/user-attachments/assets/3a3dfe68-5dec-4501-bde1-63afe6fdcb92" width="60" height="60" alt="Firebase" />
+      <br><strong>Firebase</strong>
+    </td>
+  </tr>
+</table>
+
+
 
 ## In Collaboration With
 
