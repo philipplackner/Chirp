@@ -61,13 +61,9 @@ Then build the project and you're ready to use it.
 ## In Collaboration With
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/d129ba8b-a8ee-4763-86e1-a2639dc7ccad#gh-light-mode-only" 
+  <img src="https://github.com/user-attachments/assets/d129ba8b-a8ee-4763-86e1-a2639dc7ccad" 
        alt="in-collaboration-with-jetbrains" 
        width="400" />
-  <img src="https://github.com/user-attachments/assets/d129ba8b-a8ee-4763-86e1-a2639dc7ccad#gh-dark-mode-only" 
-       alt="in-collaboration-with-jetbrains" 
-       width="400" 
-       style="background: white; padding: 20px; border-radius: 10px;" />
 </p>
 
 ---
