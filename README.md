@@ -1,9 +1,6 @@
 # Chirp
-Chirp is a multi-platform real-time messaging app for Android, iOS, and Desktop devices you can learn to build in the [**Master Building Industry-Scale Full-Stack Kotlin Apps**](https://pl-coding.com/cmp-mobile?utm_source=github&utm_medium=readme&utm_campaign=default&cmc_strip=utm) bundle.
 
-<div align="center">
-  <img width="1500" height="909" alt="bundle-transparent" src="https://github.com/user-attachments/assets/4e11bffd-839c-4eae-9d60-5802fa0757f3" />
-</div>
+Chirp is a multi-platform real-time messaging app for Android, iOS, and Desktop devices built with Kotlin Multiplatform and Compose Multiplatform.
 
 ### Mobile View
 <div align="center">
@@ -32,12 +29,12 @@ In this course, you will learn these concepts/technologies:
 
 ## How do you run the project?
 
-To run the project on your devices, you'll need to first clone it and then add your API key (access granted after course purchase).
+To run the project on your devices, you'll need to first clone it and then add your API key.
 
 Include it in `local.properties`:
 
 ```properties
-API_KEY=<YOUR_CHIRP_API_KEY>
+API_KEY=<YOUR_API_KEY>
 ```
 
 ### Firebase Setup
@@ -68,4 +65,16 @@ Then build the project and you're ready to use it.
 
 ---
 
-Learn more at [pl-coding.com/cmp-mobile](https://pl-coding.com/cmp-mobile)
+## Learn to Build This App
+
+<div align="center">
+  <img width="1500" height="909" alt="bundle-transparent" src="https://github.com/user-attachments/assets/4e11bffd-839c-4eae-9d60-5802fa0757f3" />
+</div>
+
+This project is part of the [**Master Building Industry-Scale Full-Stack Kotlin Apps**](https://pl-coding.com/cmp-mobile?utm_source=github&utm_medium=readme&utm_campaign=default&cmc_strip=utm) bundle where you'll learn to build production-ready apps from scratch.
+
+### Ready to master Kotlin Multiplatform development?
+
+**[→ Get the Complete Course Bundle](https://pl-coding.com/cmp-mobile?utm_source=github&utm_medium=readme&utm_campaign=default&cmc_strip=utm)**
+
+Learn how to build Chirp and other industry-level apps with expert guidance, real-world patterns, and production best practices.
