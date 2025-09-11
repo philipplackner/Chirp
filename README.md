@@ -1,31 +1,64 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Desktop (JVM).
+# Chirp
+
 <img width="1500" height="909" alt="bundle-transparent" src="https://github.com/user-attachments/assets/4e11bffd-839c-4eae-9d60-5802fa0757f3" />
 
-<img width="2718" height="2316" alt="mobile-screens" src="https://github.com/user-attachments/assets/55ec2600-9ecb-4d5d-a8ad-1650dfe2dc17" />
+Chirp is a multi-platform real-time messaging app for Android, iOS, and Desktop devices you can learn to build in the [**Master Building Industry-Scale Full-Stack Kotlin Apps**](https://pl-coding.com/cmp-mobile?utm_source=github&utm_medium=readme&utm_campaign=default&cmc_strip=utm) bundle.
 
-<img width="2984" height="2304" alt="tablet-chat" src="https://github.com/user-attachments/assets/df54ebfd-e7d7-4f14-9841-2abe75c630b3" />
+<img width="800" alt="mobile-screens" src="https://github.com/user-attachments/assets/55ec2600-9ecb-4d5d-a8ad-1650dfe2dc17" />
 
-<img src="https://github.com/user-attachments/assets/d129ba8b-a8ee-4763-86e1-a2639dc7ccad" 
-     alt="in-collaboration-with-jetbrains" 
-     width="200" 
-     height="50" />
+<img width="900" alt="tablet-chat" src="https://github.com/user-attachments/assets/df54ebfd-e7d7-4f14-9841-2abe75c630b3" />
 
-<img src="https://github.com/user-attachments/assets/dec2400b-4f4b-442f-ab0c-425510db847c" 
-     alt="kmp-cmp" 
-     width="150" 
-     height="50" />
+## What's covered?
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+In this course, you will learn these concepts/technologies:
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+- Kotlin Multiplatform & Compose Multiplatform theory
+- Multi-module architecture for KMP projects
+- Gradle configuration for cross-platform development
+- Authentication (JWT token management)
+- Real-time messaging with WebSocket
+- Push notifications with Firebase
+- Room for local database
+- Desktop app development
+- Desktop, iOS and Android native integrations
+- Clean Architecture principles
 
+## How do you run the project?
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+To run the project on your devices, you'll need to first clone it and then add your API key (access granted after course purchase).
+
+Include it in `local.properties`:
+
+```properties
+API_KEY=<YOUR_CHIRP_API_KEY>
+```
+
+### Firebase Setup
+
+**Android:** Place `google-services.json` in `androidApp/`
+
+**iOS:** 
+- Add `GoogleService-Info.plist` to Xcode project
+- Install Firebase SDK via Swift Package Manager (FirebaseMessaging)
+
+Then build the project and you're ready to use it.
+
+## Technology Stack
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/dec2400b-4f4b-442f-ab0c-425510db847c" 
+       alt="kmp-cmp" 
+       width="300" />
+</div>
+
+## In Collaboration With
+
+<div style="background-color: white; padding: 20px; border-radius: 10px; display: inline-block;">
+  <img src="https://github.com/user-attachments/assets/d129ba8b-a8ee-4763-86e1-a2639dc7ccad" 
+       alt="in-collaboration-with-jetbrains" 
+       width="400" />
+</div>
+
+---
+
+Learn more at [pl-coding.com/cmp-mobile](https://pl-coding.com/cmp-mobile)
