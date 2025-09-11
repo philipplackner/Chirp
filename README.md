@@ -1,4 +1,19 @@
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop (JVM).
+<img width="1500" height="909" alt="bundle-transparent" src="https://github.com/user-attachments/assets/4e11bffd-839c-4eae-9d60-5802fa0757f3" />
+
+<img width="2718" height="2316" alt="mobile-screens" src="https://github.com/user-attachments/assets/55ec2600-9ecb-4d5d-a8ad-1650dfe2dc17" />
+
+<img width="2984" height="2304" alt="tablet-chat" src="https://github.com/user-attachments/assets/df54ebfd-e7d7-4f14-9841-2abe75c630b3" />
+
+<img src="https://github.com/user-attachments/assets/d129ba8b-a8ee-4763-86e1-a2639dc7ccad" 
+     alt="in-collaboration-with-jetbrains" 
+     width="200" 
+     height="50" />
+
+<img src="https://github.com/user-attachments/assets/dec2400b-4f4b-442f-ab0c-425510db847c" 
+     alt="kmp-cmp" 
+     width="150" 
+     height="50" />
 
 * [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
