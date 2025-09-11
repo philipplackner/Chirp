@@ -86,8 +86,3 @@ Then build the project and you're ready to use it.
 
 This project is part of the [**Master Building Industry-Scale Full-Stack Kotlin Apps**](https://pl-coding.com/cmp-mobile?utm_source=github&utm_medium=readme&utm_campaign=default&cmc_strip=utm) bundle where you'll learn to build production-ready apps from scratch.
 
-### Ready to master Kotlin Multiplatform development?
-
-**[→ Get the Complete Course Bundle](https://pl-coding.com/cmp-mobile?utm_source=github&utm_medium=readme&utm_campaign=default&cmc_strip=utm)**
-
-Learn how to build Chirp and other industry-level apps with expert guidance, real-world patterns, and production best practices.
