@@ -60,11 +60,15 @@ Then build the project and you're ready to use it.
 
 ## In Collaboration With
 
-<div style="background-color: white; padding: 20px; border-radius: 10px; display: inline-block;">
-  <img src="https://github.com/user-attachments/assets/d129ba8b-a8ee-4763-86e1-a2639dc7ccad" 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d129ba8b-a8ee-4763-86e1-a2639dc7ccad#gh-light-mode-only" 
        alt="in-collaboration-with-jetbrains" 
        width="400" />
-</div>
+  <img src="https://github.com/user-attachments/assets/d129ba8b-a8ee-4763-86e1-a2639dc7ccad#gh-dark-mode-only" 
+       alt="in-collaboration-with-jetbrains" 
+       width="400" 
+       style="background: white; padding: 20px; border-radius: 10px;" />
+</p>
 
 ---
 
