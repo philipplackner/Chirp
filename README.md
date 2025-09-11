@@ -1,12 +1,19 @@
 # Chirp
-
-<img width="1500" height="909" alt="bundle-transparent" src="https://github.com/user-attachments/assets/4e11bffd-839c-4eae-9d60-5802fa0757f3" />
-
 Chirp is a multi-platform real-time messaging app for Android, iOS, and Desktop devices you can learn to build in the [**Master Building Industry-Scale Full-Stack Kotlin Apps**](https://pl-coding.com/cmp-mobile?utm_source=github&utm_medium=readme&utm_campaign=default&cmc_strip=utm) bundle.
 
-<img width="800" alt="mobile-screens" src="https://github.com/user-attachments/assets/55ec2600-9ecb-4d5d-a8ad-1650dfe2dc17" />
+<div align="center">
+  <img width="1500" height="909" alt="bundle-transparent" src="https://github.com/user-attachments/assets/4e11bffd-839c-4eae-9d60-5802fa0757f3" />
+</div>
 
-<img width="900" alt="tablet-chat" src="https://github.com/user-attachments/assets/df54ebfd-e7d7-4f14-9841-2abe75c630b3" />
+### Mobile View
+<div align="center">
+  <img width="800" alt="mobile-screens" src="https://github.com/user-attachments/assets/55ec2600-9ecb-4d5d-a8ad-1650dfe2dc17" />
+</div>
+
+### Desktop, Foldable & Tablet View
+<div align="center">
+  <img width="900" alt="tablet-chat" src="https://github.com/user-attachments/assets/df54ebfd-e7d7-4f14-9841-2abe75c630b3" />
+</div>
 
 ## What's covered?
 
@@ -45,11 +52,11 @@ Then build the project and you're ready to use it.
 
 ## Technology Stack
 
-<div align="center">
+<p align="center">
   <img src="https://github.com/user-attachments/assets/dec2400b-4f4b-442f-ab0c-425510db847c" 
        alt="kmp-cmp" 
        width="300" />
-</div>
+</p>
 
 ## In Collaboration With
 
