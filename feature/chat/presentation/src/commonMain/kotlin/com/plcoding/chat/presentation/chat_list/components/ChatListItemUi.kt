@@ -80,7 +80,9 @@ fun ChatListItemUi(
                             color = MaterialTheme.colorScheme.extended.textSecondary,
                         )
                     ) {
-                        append(chat.lastMessageSenderUsername + ": ")
+                        if(chat.lastMessageSenderUsername != null) {
+                            append(chat.lastMessageSenderUsername + ": ")
+                        }
                     }
                     append(chat.lastMessage.content)
                 }
