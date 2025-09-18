@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "16392e6b7f24e6798c0821bbd57ae4eb",
+    "identityHash": "2304568384f6e70cd389447c11213af7",
     "entities": [
       {
         "tableName": "ChatEntity",
@@ -223,12 +223,12 @@
     "views": [
       {
         "viewName": "last_message_view_per_chat",
-        "createSql": "CREATE VIEW `${VIEW_NAME}` AS SELECT m1.*\n        FROM chatmessageentity m1\n        JOIN (\n            SELECT chatId, MAX(timestamp) AS max_timestamp\n            FROM chatmessageentity\n            GROUP BY chatId\n        ) m2 ON m1.chatId = m2.chatId AND m1.timestamp = m2.max_timestamp"
+        "createSql": "CREATE VIEW `${VIEW_NAME}` AS SELECT m1.*, p.username AS senderUsername\n        FROM chatmessageentity m1\n        JOIN (\n            SELECT chatId, MAX(timestamp) AS max_timestamp\n            FROM chatmessageentity\n            GROUP BY chatId\n        ) m2 ON m1.chatId = m2.chatId AND m1.timestamp = m2.max_timestamp\n        LEFT JOIN chatparticipantentity p ON m1.senderId = p.userId"
       }
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '16392e6b7f24e6798c0821bbd57ae4eb')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2304568384f6e70cd389447c11213af7')"
     ]
   }
 }

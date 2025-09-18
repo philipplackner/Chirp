@@ -16,6 +16,7 @@
     <string name="save">Save</string>
     <string name="today">Today</string>
     <string name="yesterday">Yesterday</string>
+    <string name="only_you">Only you</string>
     <string name="today_x">Today, %1$s</string>
     <string name="yesterday_x">Yesterday, %1$s</string>
     <string name="no_chat_selected">No chat selected</string>
