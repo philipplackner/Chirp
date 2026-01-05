@@ -2,8 +2,8 @@
 # Build tools
 agp = "8.11.1"
 composeBom = "2025.07.00"
-kotlin = "2.2.0"
-ksp = "2.2.0-2.0.2"
+kotlin = "2.3.0"
+ksp = "2.3.4"
 google-services = "4.4.3"
 conveyor = "1.12"
 
