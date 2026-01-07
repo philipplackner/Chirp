@@ -28,16 +28,23 @@ kotlin {
             }
         }
 
-        desktopMain {
-            dependencies {
-                implementation(libs.ktor.client.okhttp)
-            }
+        // Create jvmCommonMain for shared JVM code between Android and Desktop
+        val jvmCommonMain by creating {
+            dependsOn(commonMain.get())
         }
 
         androidMain {
+            dependsOn(jvmCommonMain)
             dependencies {
                 implementation(libs.ktor.client.okhttp)
                 implementation(libs.koin.android)
+            }
+        }
+
+        desktopMain {
+            dependsOn(jvmCommonMain)
+            dependencies {
+                implementation(libs.ktor.client.okhttp)
             }
         }
 

@@ -24,10 +24,15 @@ kotlin {
             }
         }
 
-        mobileMain.dependencies {
-            implementation(libs.moko.permissions)
-            implementation(libs.moko.permissions.compose)
-            implementation(libs.moko.permissions.notifications)
+        val mobileMain by getting {
+            dependencies {
+                implementation(libs.moko.permissions)
+                implementation(libs.moko.permissions.compose)
+                implementation(libs.moko.permissions.notifications)
+            }
+        }
+        androidMain {
+            dependsOn(mobileMain)
         }
     }
 
