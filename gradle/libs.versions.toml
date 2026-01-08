@@ -1,6 +1,6 @@
 [versions]
 # Build tools
-agp = "8.12.3"
+agp = "9.0.0-rc02"
 composeBom = "2025.07.00"
 kotlin = "2.3.0"
 ksp = "2.3.4"
@@ -8,11 +8,11 @@ google-services = "4.4.3"
 conveyor = "1.12"
 
 androidDesugarJdkLibs = "2.1.5"
-androidTools = "31.12.0-alpha04"
+androidTools = "32.0.0-rc02"
 
 # Compose
 compose-hot-reload = "1.0.0-beta04"
-compose-multiplatform = "1.9.0-beta01"
+compose-multiplatform = "1.9.3"
 # Maintain compose multiplatform version aligned with navigation, cache error could happen
 compose-lifecycle = "2.9.1"
 navigation-compose = "2.9.0-beta04"
