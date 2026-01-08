@@ -19,7 +19,8 @@ class CmpLibraryConventionPlugin: Plugin<Project> {
                 "commonMainImplementation"(libs.findLibrary("jetbrains-compose-material3").get())
                 "commonMainImplementation"(libs.findLibrary("jetbrains-compose-material-icons-core").get())
 
-                "debugImplementation"(libs.findLibrary("androidx-compose-ui-tooling").get())
+                // Single-variant model: use androidMainImplementation instead of debugImplementation
+                "androidMainImplementation"(libs.findLibrary("androidx-compose-ui-tooling").get())
             }
         }
     }
