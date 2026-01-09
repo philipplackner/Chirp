@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.convention.android.application.compose)
     alias(libs.plugins.google.services)
-    alias(libs.plugins.kotlin.android)
 }
 
 dependencies {
@@ -10,9 +9,4 @@ dependencies {
     implementation(libs.core.splashscreen)
     implementation(libs.core.ktx)
     implementation(libs.androidx.activity.compose)
-}
-android {
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 }
