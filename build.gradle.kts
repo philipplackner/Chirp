@@ -13,4 +13,5 @@ plugins {
     alias(libs.plugins.room) apply false
     alias(libs.plugins.google.services) apply false
     alias(libs.plugins.conveyor) apply false
+    alias(libs.plugins.kotlin.android) apply false
 }
