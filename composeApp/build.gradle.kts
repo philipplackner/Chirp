@@ -1,21 +1,22 @@
 plugins {
     alias(libs.plugins.convention.cmp.application)
     alias(libs.plugins.compose.hot.reload)
-    alias(libs.plugins.google.services)
     alias(libs.plugins.conveyor)
 }
 
 version = "1.0.0"
 
 kotlin {
+    androidLibrary {
+        namespace = "com.plcoding.chirp.shared"
+        compileSdk = 36
+        minSdk = 26
+    }
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
-
-            implementation(libs.core.splashscreen)
-
-            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(projects.core.data)
