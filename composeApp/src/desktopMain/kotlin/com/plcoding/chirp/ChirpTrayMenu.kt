@@ -7,9 +7,9 @@ import androidx.compose.ui.window.Tray
 import androidx.compose.ui.window.TrayState
 import com.plcoding.core.domain.preferences.ThemePreference
 import org.jetbrains.compose.resources.painterResource
-import chirp.composeapp.generated.resources.Res
-import chirp.composeapp.generated.resources.app_theme
-import chirp.composeapp.generated.resources.logo
+import com.plcoding.chirp.Res
+import com.plcoding.chirp.app_theme
+import com.plcoding.chirp.logo
 import org.jetbrains.compose.resources.stringResource
 
 @Composable

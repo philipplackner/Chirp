@@ -17,8 +17,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.cancel
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.cancel
 import com.plcoding.chat.presentation.components.ChatParticipantSearchTextSection
 import com.plcoding.chat.presentation.components.ChatParticipantsSelectionSection
 import com.plcoding.chat.presentation.components.ManageChatButtonSection
@@ -31,7 +31,7 @@ import com.plcoding.core.presentation.util.DeviceConfiguration
 import com.plcoding.core.presentation.util.clearFocusOnTap
 import com.plcoding.core.presentation.util.currentDeviceConfiguration
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ManageChatScreen(

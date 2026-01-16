@@ -7,6 +7,10 @@ kotlin {
         namespace = "com.plcoding.core.designsystem"
         compileSdk = 36
         minSdk = 26
+
+        androidResources {
+            enable = true
+        }
     }
 
     // Source set declarations.
@@ -24,9 +28,6 @@ kotlin {
 
                 implementation(libs.coil.compose)
                 implementation(libs.coil.network.ktor)
-
-                implementation(compose.components.resources)
-                implementation(compose.components.uiToolingPreview)
             }
         }
 
@@ -53,4 +54,5 @@ kotlin {
 
 compose.resources {
     publicResClass = true
+    packageOfResClass = "com.plcoding.core.designsystem"
 }

@@ -3,11 +3,11 @@ package com.plcoding.auth.presentation.register
 import androidx.compose.runtime.snapshotFlow
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import chirp.feature.auth.presentation.generated.resources.Res
-import chirp.feature.auth.presentation.generated.resources.error_account_exists
-import chirp.feature.auth.presentation.generated.resources.error_invalid_email
-import chirp.feature.auth.presentation.generated.resources.error_invalid_password
-import chirp.feature.auth.presentation.generated.resources.error_invalid_username
+import com.plcoding.auth.presentation.Res
+import com.plcoding.auth.presentation.error_account_exists
+import com.plcoding.auth.presentation.error_invalid_email
+import com.plcoding.auth.presentation.error_invalid_password
+import com.plcoding.auth.presentation.error_invalid_username
 import com.plcoding.core.domain.auth.AuthService
 import com.plcoding.core.domain.util.DataError
 import com.plcoding.core.domain.util.onFailure

@@ -7,6 +7,10 @@ kotlin {
         namespace = "com.plcoding.feature.auth.presentation"
         compileSdk = 36
         minSdk = 26
+
+        androidResources {
+            enable = true
+        }
     }
 
     // Source set declarations.
@@ -25,9 +29,6 @@ kotlin {
                 implementation(projects.core.presentation)
 
                 implementation(libs.bundles.koin.common)
-
-                implementation(compose.components.resources)
-                implementation(compose.components.uiToolingPreview)
             }
         }
 
@@ -50,4 +51,8 @@ kotlin {
         }
     }
 
+}
+
+compose.resources {
+    packageOfResClass = "com.plcoding.auth.presentation"
 }
