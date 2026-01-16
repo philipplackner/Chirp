@@ -1,22 +1,8 @@
 package com.plcoding.core.presentation.util
 
-import chirp.core.presentation.generated.resources.Res
-import chirp.core.presentation.generated.resources.error_bad_request
-import chirp.core.presentation.generated.resources.error_conflict
-import chirp.core.presentation.generated.resources.error_disk_full
-import chirp.core.presentation.generated.resources.error_forbidden
-import chirp.core.presentation.generated.resources.error_no_internet
-import chirp.core.presentation.generated.resources.error_not_found
-import chirp.core.presentation.generated.resources.error_payload_too_large
-import chirp.core.presentation.generated.resources.error_request_timeout
-import chirp.core.presentation.generated.resources.error_serialization
-import chirp.core.presentation.generated.resources.error_server
-import chirp.core.presentation.generated.resources.error_service_unavailable
-import chirp.core.presentation.generated.resources.error_too_many_requests
-import chirp.core.presentation.generated.resources.error_unable_to_send_message
-import chirp.core.presentation.generated.resources.error_unauthorized
-import chirp.core.presentation.generated.resources.error_unknown
 import com.plcoding.core.domain.util.DataError
+import com.plcoding.core.presentation.Res
+import com.plcoding.core.presentation.*
 
 fun DataError.toUiText(): UiText {
     val resource = when(this) {

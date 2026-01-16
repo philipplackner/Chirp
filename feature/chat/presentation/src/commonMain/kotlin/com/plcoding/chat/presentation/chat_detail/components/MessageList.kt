@@ -19,10 +19,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.no_messages
-import chirp.feature.chat.presentation.generated.resources.no_messages_subtitle
-import chirp.feature.chat.presentation.generated.resources.retry
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.no_messages
+import com.plcoding.chat.presentation.no_messages_subtitle
+import com.plcoding.chat.presentation.retry
 import com.plcoding.chat.presentation.components.EmptySection
 import com.plcoding.chat.presentation.model.MessageUi
 import com.plcoding.core.designsystem.components.buttons.ChirpButton

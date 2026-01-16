@@ -7,6 +7,10 @@ kotlin {
         namespace = "com.plcoding.feature.chat.presentation"
         compileSdk = 36
         minSdk = 26
+
+        androidResources {
+            enable = true
+        }
     }
 
     // Source set declarations.
@@ -28,9 +32,6 @@ kotlin {
                 implementation(libs.material3.adaptive.navigation)
                 implementation(libs.jetbrains.compose.backhandler)
                 implementation(libs.kotlinx.datetime)
-
-                implementation(compose.components.resources)
-                implementation(compose.components.uiToolingPreview)
             }
         }
 
@@ -55,4 +56,8 @@ kotlin {
         }
     }
 
+}
+
+compose.resources {
+    packageOfResClass = "com.plcoding.chat.presentation"
 }

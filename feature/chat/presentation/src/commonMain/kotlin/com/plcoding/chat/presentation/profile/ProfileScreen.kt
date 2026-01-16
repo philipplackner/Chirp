@@ -31,22 +31,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.cancel
-import chirp.feature.chat.presentation.generated.resources.contact_chirp_support_change_email
-import chirp.feature.chat.presentation.generated.resources.current_password
-import chirp.feature.chat.presentation.generated.resources.delete
-import chirp.feature.chat.presentation.generated.resources.delete_profile_picture
-import chirp.feature.chat.presentation.generated.resources.delete_profile_picture_desc
-import chirp.feature.chat.presentation.generated.resources.email
-import chirp.feature.chat.presentation.generated.resources.new_password
-import chirp.feature.chat.presentation.generated.resources.password
-import chirp.feature.chat.presentation.generated.resources.password_change_successful
-import chirp.feature.chat.presentation.generated.resources.password_hint
-import chirp.feature.chat.presentation.generated.resources.profile_image
-import chirp.feature.chat.presentation.generated.resources.save
-import chirp.feature.chat.presentation.generated.resources.upload_icon
-import chirp.feature.chat.presentation.generated.resources.upload_image
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.cancel
+import com.plcoding.chat.presentation.contact_chirp_support_change_email
+import com.plcoding.chat.presentation.current_password
+import com.plcoding.chat.presentation.delete
+import com.plcoding.chat.presentation.delete_profile_picture
+import com.plcoding.chat.presentation.delete_profile_picture_desc
+import com.plcoding.chat.presentation.email
+import com.plcoding.chat.presentation.new_password
+import com.plcoding.chat.presentation.password
+import com.plcoding.chat.presentation.password_change_successful
+import com.plcoding.chat.presentation.password_hint
+import com.plcoding.chat.presentation.profile_image
+import com.plcoding.chat.presentation.save
+import com.plcoding.chat.presentation.upload_icon
+import com.plcoding.chat.presentation.upload_image
 import com.plcoding.chat.presentation.profile.components.DragAndDropOverlay
 import com.plcoding.chat.presentation.profile.components.ProfileHeaderSection
 import com.plcoding.chat.presentation.profile.components.ProfileSectionLayout
@@ -68,7 +68,7 @@ import com.plcoding.core.presentation.util.clearFocusOnTap
 import com.plcoding.core.presentation.util.currentDeviceConfiguration
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable

@@ -7,12 +7,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import chirp.feature.auth.presentation.generated.resources.Res
-import chirp.feature.auth.presentation.generated.resources.account_successfully_created
-import chirp.feature.auth.presentation.generated.resources.login
-import chirp.feature.auth.presentation.generated.resources.resend_verification_email
-import chirp.feature.auth.presentation.generated.resources.resent_verification_email
-import chirp.feature.auth.presentation.generated.resources.verification_email_sent_to_x
+import com.plcoding.auth.presentation.Res
+import com.plcoding.auth.presentation.account_successfully_created
+import com.plcoding.auth.presentation.login
+import com.plcoding.auth.presentation.resend_verification_email
+import com.plcoding.auth.presentation.resent_verification_email
+import com.plcoding.auth.presentation.verification_email_sent_to_x
 import com.plcoding.core.designsystem.components.brand.ChirpSuccessIcon
 import com.plcoding.core.designsystem.components.buttons.ChirpButton
 import com.plcoding.core.designsystem.components.buttons.ChirpButtonStyle
@@ -23,7 +23,7 @@ import com.plcoding.core.designsystem.theme.ChirpTheme
 import com.plcoding.core.presentation.util.ObserveAsEvents
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable

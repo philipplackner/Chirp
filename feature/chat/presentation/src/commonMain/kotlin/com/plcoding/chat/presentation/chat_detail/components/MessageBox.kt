@@ -27,10 +27,10 @@ import androidx.compose.ui.input.key.onPreviewKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.cloud_off_icon
-import chirp.feature.chat.presentation.generated.resources.send
-import chirp.feature.chat.presentation.generated.resources.send_a_message
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.cloud_off_icon
+import com.plcoding.chat.presentation.send
+import com.plcoding.chat.presentation.send_a_message
 import com.plcoding.chat.domain.models.ConnectionState
 import com.plcoding.chat.presentation.util.toUiText
 import com.plcoding.core.designsystem.components.buttons.ChirpButton
@@ -39,7 +39,7 @@ import com.plcoding.core.designsystem.theme.ChirpTheme
 import com.plcoding.core.designsystem.theme.extended
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun MessageBox(

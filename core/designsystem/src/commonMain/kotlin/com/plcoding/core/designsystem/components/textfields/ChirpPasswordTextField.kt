@@ -23,16 +23,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import chirp.core.designsystem.generated.resources.Res
-import chirp.core.designsystem.generated.resources.eye_icon
-import chirp.core.designsystem.generated.resources.eye_off_icon
-import chirp.core.designsystem.generated.resources.hide_password
-import chirp.core.designsystem.generated.resources.show_password
+import com.plcoding.core.designsystem.Res
+import com.plcoding.core.designsystem.eye_icon
+import com.plcoding.core.designsystem.eye_off_icon
+import com.plcoding.core.designsystem.hide_password
+import com.plcoding.core.designsystem.show_password
 import com.plcoding.core.designsystem.theme.ChirpTheme
 import com.plcoding.core.designsystem.theme.extended
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ChirpPasswordTextField(

@@ -16,15 +16,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import chirp.core.designsystem.generated.resources.arrow_left_icon
-import chirp.core.designsystem.generated.resources.dots_icon
-import chirp.core.designsystem.generated.resources.log_out_icon
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.chat_members
-import chirp.feature.chat.presentation.generated.resources.go_back
-import chirp.feature.chat.presentation.generated.resources.leave_chat
-import chirp.feature.chat.presentation.generated.resources.open_chat_options_menu
-import chirp.feature.chat.presentation.generated.resources.users_icon
+import com.plcoding.core.designsystem.arrow_left_icon
+import com.plcoding.core.designsystem.dots_icon
+import com.plcoding.core.designsystem.log_out_icon
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.chat_members
+import com.plcoding.chat.presentation.go_back
+import com.plcoding.chat.presentation.leave_chat
+import com.plcoding.chat.presentation.open_chat_options_menu
+import com.plcoding.chat.presentation.users_icon
 import com.plcoding.chat.domain.models.ChatMessage
 import com.plcoding.chat.domain.models.ChatMessageDeliveryStatus
 import com.plcoding.chat.presentation.components.ChatHeader
@@ -38,9 +38,9 @@ import com.plcoding.core.designsystem.theme.ChirpTheme
 import com.plcoding.core.designsystem.theme.extended
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import kotlin.time.Clock
-import chirp.core.designsystem.generated.resources.Res as DesignSystemRes
+import com.plcoding.core.designsystem.Res as DesignSystemRes
 
 @Composable
 fun ChatDetailHeader(

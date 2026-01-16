@@ -11,12 +11,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import chirp.feature.auth.presentation.generated.resources.Res
-import chirp.feature.auth.presentation.generated.resources.password
-import chirp.feature.auth.presentation.generated.resources.password_hint
-import chirp.feature.auth.presentation.generated.resources.reset_password_successfully
-import chirp.feature.auth.presentation.generated.resources.set_new_password
-import chirp.feature.auth.presentation.generated.resources.submit
+import com.plcoding.auth.presentation.Res
+import com.plcoding.auth.presentation.password
+import com.plcoding.auth.presentation.password_hint
+import com.plcoding.auth.presentation.reset_password_successfully
+import com.plcoding.auth.presentation.set_new_password
+import com.plcoding.auth.presentation.submit
 import com.plcoding.core.designsystem.components.brand.ChirpBrandLogo
 import com.plcoding.core.designsystem.components.buttons.ChirpButton
 import com.plcoding.core.designsystem.components.layouts.ChirpAdaptiveFormLayout
@@ -26,7 +26,7 @@ import com.plcoding.core.designsystem.components.textfields.ChirpTextField
 import com.plcoding.core.designsystem.theme.ChirpTheme
 import com.plcoding.core.designsystem.theme.extended
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable

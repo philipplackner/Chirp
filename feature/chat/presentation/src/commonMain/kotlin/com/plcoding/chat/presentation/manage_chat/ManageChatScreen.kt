@@ -5,10 +5,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.chat_members
-import chirp.feature.chat.presentation.generated.resources.create_chat
-import chirp.feature.chat.presentation.generated.resources.save
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.chat_members
+import com.plcoding.chat.presentation.create_chat
+import com.plcoding.chat.presentation.save
 import com.plcoding.chat.presentation.components.manage_chat.ManageChatAction
 import com.plcoding.chat.presentation.components.manage_chat.ManageChatScreen
 import com.plcoding.core.designsystem.components.dialogs.ChirpAdaptiveDialogSheetLayout

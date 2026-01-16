@@ -7,6 +7,10 @@ kotlin {
         namespace = "com.plcoding.core.presentation"
         compileSdk = 36
         minSdk = 26
+
+        androidResources {
+            enable = true
+        }
     }
 
     // Source set declarations.
@@ -25,8 +29,6 @@ kotlin {
                 implementation(libs.material3.adaptive)
                 implementation(libs.jetbrains.lifecycle.compose)
                 implementation(libs.bundles.koin.common)
-
-                implementation(compose.components.resources)
             }
         }
 
@@ -42,4 +44,8 @@ kotlin {
         }
     }
 
+}
+
+compose.resources {
+    packageOfResClass = "com.plcoding.core.presentation"
 }

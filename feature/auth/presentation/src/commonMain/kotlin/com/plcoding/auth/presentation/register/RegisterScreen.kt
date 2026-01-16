@@ -12,17 +12,17 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import chirp.feature.auth.presentation.generated.resources.Res
-import chirp.feature.auth.presentation.generated.resources.email
-import chirp.feature.auth.presentation.generated.resources.email_placeholder
-import chirp.feature.auth.presentation.generated.resources.login
-import chirp.feature.auth.presentation.generated.resources.password
-import chirp.feature.auth.presentation.generated.resources.password_hint
-import chirp.feature.auth.presentation.generated.resources.register
-import chirp.feature.auth.presentation.generated.resources.username
-import chirp.feature.auth.presentation.generated.resources.username_hint
-import chirp.feature.auth.presentation.generated.resources.username_placeholder
-import chirp.feature.auth.presentation.generated.resources.welcome_to_chirp
+import com.plcoding.auth.presentation.Res
+import com.plcoding.auth.presentation.email
+import com.plcoding.auth.presentation.email_placeholder
+import com.plcoding.auth.presentation.login
+import com.plcoding.auth.presentation.password
+import com.plcoding.auth.presentation.password_hint
+import com.plcoding.auth.presentation.register
+import com.plcoding.auth.presentation.username
+import com.plcoding.auth.presentation.username_hint
+import com.plcoding.auth.presentation.username_placeholder
+import com.plcoding.auth.presentation.welcome_to_chirp
 import com.plcoding.core.designsystem.components.brand.ChirpBrandLogo
 import com.plcoding.core.designsystem.components.buttons.ChirpButton
 import com.plcoding.core.designsystem.components.buttons.ChirpButtonStyle
@@ -33,7 +33,7 @@ import com.plcoding.core.designsystem.components.textfields.ChirpTextField
 import com.plcoding.core.designsystem.theme.ChirpTheme
 import com.plcoding.core.presentation.util.ObserveAsEvents
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
