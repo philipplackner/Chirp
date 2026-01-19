@@ -3,12 +3,6 @@ plugins {
 }
 
 kotlin {
-    androidLibrary {
-        namespace = "com.plcoding.core.domain"
-        compileSdk = 36
-        minSdk = 26
-    }
-
     // Source set declarations.
     // Declaring a target automatically creates a source set with the same name. By default, the
     // Kotlin Gradle Plugin creates additional source sets that depend on each other, since it is
