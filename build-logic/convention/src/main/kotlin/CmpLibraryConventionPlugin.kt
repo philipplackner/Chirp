@@ -1,3 +1,4 @@
+import com.plcoding.chirp.convention.configureAndroidLibraryTarget
 import com.plcoding.chirp.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -12,6 +13,8 @@ class CmpLibraryConventionPlugin: Plugin<Project> {
                 apply("org.jetbrains.kotlin.plugin.compose")
                 apply("org.jetbrains.compose")
             }
+
+            configureAndroidLibraryTarget()
 
             dependencies {
                 "commonMainImplementation"(libs.findLibrary("jetbrains-compose-ui").get())
