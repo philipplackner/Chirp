@@ -1,6 +1,6 @@
 [versions]
 # Build tools
-agp = "9.0.0-rc02"
+agp = "9.0.0"
 composeBom = "2025.07.00"
 kotlin = "2.3.0"
 ksp = "2.3.4"
