@@ -1,18 +1,18 @@
 [versions]
 # Build tools
-agp = "8.11.1"
+agp = "9.0.0"
 composeBom = "2025.07.00"
-kotlin = "2.2.0"
-ksp = "2.2.0-2.0.2"
+kotlin = "2.3.0"
+ksp = "2.3.4"
 google-services = "4.4.3"
 conveyor = "1.12"
 
 androidDesugarJdkLibs = "2.1.5"
-androidTools = "31.12.0"
+androidTools = "32.0.0"
 
 # Compose
 compose-hot-reload = "1.0.0-beta04"
-compose-multiplatform = "1.9.0-beta01"
+compose-multiplatform = "1.9.3"
 # Maintain compose multiplatform version aligned with navigation, cache error could happen
 compose-lifecycle = "2.9.1"
 navigation-compose = "2.9.0-beta04"
@@ -63,6 +63,9 @@ desktopPackageVersion = "1.0.0"
 runner = "1.7.0"
 junit = "1.3.0"
 jsystemthemedetector = "3.9.1"
+junitVersion = "4.13.2"
+espressoCore = "3.7.0"
+material = "1.13.0"
 
 [libraries]
 # Kotlin
@@ -93,6 +96,10 @@ kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.
 # Compose
 jetbrains-compose-backhandler = { module = "org.jetbrains.compose.ui:ui-backhandler", version.ref = "compose-multiplatform" }
 jetbrains-compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
+
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 
 # Koin
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
@@ -173,6 +180,9 @@ jetbrains-savedstate = { module = "org.jetbrains.androidx.savedstate:savedstate"
 jetbrains-bundle = { module = "org.jetbrains.androidx.core:core-bundle", version.ref = "jetbrains-core-bundle" }
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
+junit = { group = "junit", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 convention-android-application = { id = "com.plcoding.convention.android.application", version = "unspecified" }

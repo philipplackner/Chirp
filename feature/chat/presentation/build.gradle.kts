@@ -28,7 +28,9 @@ kotlin {
             }
         }
 
+        val mobileMain by getting
         androidMain {
+            dependsOn(mobileMain)
             dependencies {
                 // Add Android-specific dependencies here. Note that this source set depends on
                 // commonMain by default and will correctly pull the Android artifacts of any KMP

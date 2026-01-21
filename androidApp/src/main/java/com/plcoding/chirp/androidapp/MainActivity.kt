@@ -1,4 +1,4 @@
-package com.plcoding.chirp
+package com.plcoding.chirp.androidapp
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.plcoding.chirp.App
 import com.plcoding.chirp.navigation.ExternalUriHandler
 
 class MainActivity : ComponentActivity() {

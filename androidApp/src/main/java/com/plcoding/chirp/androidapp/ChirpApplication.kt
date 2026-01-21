@@ -1,4 +1,4 @@
-package com.plcoding.chirp
+package com.plcoding.chirp.androidapp
 
 import android.app.Application
 import com.plcoding.chirp.di.initKoin

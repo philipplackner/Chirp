@@ -23,11 +23,6 @@ private val hierarchyTemplate = KotlinHierarchyTemplate {
             }
         }
 
-        group("jvmCommon") {
-            withAndroidTarget()
-            withJvm()
-        }
-
         group("native") {
             withNative()
 

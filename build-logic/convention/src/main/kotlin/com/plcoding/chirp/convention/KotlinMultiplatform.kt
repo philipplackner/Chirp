@@ -1,19 +1,22 @@
 package com.plcoding.chirp.convention
 
-import com.android.build.api.dsl.LibraryExtension
+import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryExtension
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 internal fun Project.configureKotlinMultiplatform() {
-    extensions.configure<LibraryExtension> {
-        namespace = this@configureKotlinMultiplatform.pathToPackageName()
-    }
-
-    configureAndroidTarget()
+    configureAndroidLibraryTarget()
     configureDesktopTarget()
 
     extensions.configure<KotlinMultiplatformExtension> {
+        extensions.configure<KotlinMultiplatformAndroidLibraryExtension> {
+            compileSdk = 36
+            minSdk = 26
+            namespace = pathToPackageName()
+            experimentalProperties["android.experimental.kmp.enableAndroidResources"] = true
+        }
+
         listOf(
             iosX64(),
             iosArm64(),

@@ -8,6 +8,13 @@ plugins {
 version = "1.0.0"
 
 kotlin {
+    androidLibrary {
+        compileSdk = 36
+        minSdk = 26
+        namespace = "com.plcoding.chirp.composeapp"
+        experimentalProperties["android.experimental.kmp.enableAndroidResources"] = true
+    }
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
