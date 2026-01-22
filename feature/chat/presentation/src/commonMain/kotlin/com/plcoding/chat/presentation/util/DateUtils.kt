@@ -1,10 +1,10 @@
 package com.plcoding.chat.presentation.util
 
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.today
-import chirp.feature.chat.presentation.generated.resources.today_x
-import chirp.feature.chat.presentation.generated.resources.yesterday
-import chirp.feature.chat.presentation.generated.resources.yesterday_x
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.today
+import com.plcoding.chat.presentation.today_x
+import com.plcoding.chat.presentation.yesterday
+import com.plcoding.chat.presentation.yesterday_x
 import com.plcoding.core.presentation.util.UiText
 import kotlinx.datetime.DateTimeUnit
 import kotlinx.datetime.LocalDate

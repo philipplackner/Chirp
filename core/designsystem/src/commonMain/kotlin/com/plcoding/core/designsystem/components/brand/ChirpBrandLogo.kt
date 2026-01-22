@@ -6,8 +6,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import chirp.core.designsystem.generated.resources.Res
-import chirp.core.designsystem.generated.resources.logo_chirp
+import com.plcoding.core.designsystem.Res
+import com.plcoding.core.designsystem.logo_chirp
 import org.jetbrains.compose.resources.vectorResource
 
 @Composable

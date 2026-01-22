@@ -9,9 +9,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.add
-import chirp.feature.chat.presentation.generated.resources.email_or_username
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.add
+import com.plcoding.chat.presentation.email_or_username
 import com.plcoding.core.designsystem.components.buttons.ChirpButton
 import com.plcoding.core.designsystem.components.buttons.ChirpButtonStyle
 import com.plcoding.core.designsystem.components.textfields.ChirpTextField

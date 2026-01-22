@@ -4,9 +4,9 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import chirp.feature.auth.presentation.generated.resources.Res
-import chirp.feature.auth.presentation.generated.resources.error_reset_password_token_invalid
-import chirp.feature.auth.presentation.generated.resources.error_same_password
+import com.plcoding.auth.presentation.Res
+import com.plcoding.auth.presentation.error_reset_password_token_invalid
+import com.plcoding.auth.presentation.error_same_password
 import com.plcoding.core.domain.auth.AuthService
 import com.plcoding.core.domain.util.DataError
 import com.plcoding.core.domain.util.onFailure

@@ -12,10 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.group_chat
-import chirp.feature.chat.presentation.generated.resources.only_you
-import chirp.feature.chat.presentation.generated.resources.you
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.group_chat
+import com.plcoding.chat.presentation.only_you
+import com.plcoding.chat.presentation.you
 import com.plcoding.chat.presentation.model.ChatUi
 import com.plcoding.core.designsystem.components.avatar.ChirpStackedAvatars
 import com.plcoding.core.designsystem.theme.extended

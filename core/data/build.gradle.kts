@@ -4,6 +4,11 @@ plugins {
 }
 
 kotlin {
+    androidLibrary {
+        namespace = "com.plcoding.core.data"
+        compileSdk = 36
+        minSdk = 26
+    }
 
     // Source set declarations.
     // Declaring a target automatically creates a source set with the same name. By default, the

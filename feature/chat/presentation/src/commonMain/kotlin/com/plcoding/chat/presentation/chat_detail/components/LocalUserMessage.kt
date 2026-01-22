@@ -13,11 +13,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.delete_for_everyone
-import chirp.feature.chat.presentation.generated.resources.reload_icon
-import chirp.feature.chat.presentation.generated.resources.retry
-import chirp.feature.chat.presentation.generated.resources.you
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.delete_for_everyone
+import com.plcoding.chat.presentation.reload_icon
+import com.plcoding.chat.presentation.retry
+import com.plcoding.chat.presentation.you
 import com.plcoding.chat.domain.models.ChatMessageDeliveryStatus
 import com.plcoding.chat.presentation.model.MessageUi
 import com.plcoding.core.designsystem.components.chat.ChirpChatBubble

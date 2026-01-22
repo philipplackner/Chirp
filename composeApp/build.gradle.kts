@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.convention.cmp.application)
-    alias(libs.plugins.compose.hot.reload)
     alias(libs.plugins.conveyor)
 }
 
@@ -11,9 +10,16 @@ kotlin {
         namespace = "com.plcoding.chirp.shared"
         compileSdk = 36
         minSdk = 26
+
+        androidResources {
+            enable = true
+        }
     }
 
     sourceSets {
+        androidMain.dependencies {
+            implementation(libs.androidx.activity.compose)
+        }
         commonMain.dependencies {
             implementation(projects.core.data)
             implementation(projects.core.domain)
@@ -30,13 +36,6 @@ kotlin {
 
             implementation(libs.jetbrains.compose.navigation)
             implementation(libs.bundles.koin.common)
-
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
             implementation(libs.jetbrains.compose.viewmodel)
             implementation(libs.jetbrains.lifecycle.compose)
         }
@@ -59,6 +58,10 @@ kotlin {
             implementation(compose.desktop.windows_arm64)
         }
     }
+}
+
+compose.resources {
+    packageOfResClass = "com.plcoding.chirp"
 }
 
 compose.desktop {

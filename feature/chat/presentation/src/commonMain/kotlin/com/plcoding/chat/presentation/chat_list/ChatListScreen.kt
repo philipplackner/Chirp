@@ -27,14 +27,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.cancel
-import chirp.feature.chat.presentation.generated.resources.create_chat
-import chirp.feature.chat.presentation.generated.resources.do_you_want_to_logout
-import chirp.feature.chat.presentation.generated.resources.do_you_want_to_logout_desc
-import chirp.feature.chat.presentation.generated.resources.logout
-import chirp.feature.chat.presentation.generated.resources.no_chats
-import chirp.feature.chat.presentation.generated.resources.no_chats_subtitle
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.cancel
+import com.plcoding.chat.presentation.create_chat
+import com.plcoding.chat.presentation.do_you_want_to_logout
+import com.plcoding.chat.presentation.do_you_want_to_logout_desc
+import com.plcoding.chat.presentation.logout
+import com.plcoding.chat.presentation.no_chats
+import com.plcoding.chat.presentation.no_chats_subtitle
 import com.plcoding.chat.presentation.chat_list.components.ChatListHeader
 import com.plcoding.chat.presentation.chat_list.components.ChatListItemUi
 import com.plcoding.chat.presentation.components.EmptySection
@@ -48,7 +48,7 @@ import com.plcoding.core.presentation.permissions.rememberPermissionController
 import com.plcoding.core.presentation.util.ObserveAsEvents
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
