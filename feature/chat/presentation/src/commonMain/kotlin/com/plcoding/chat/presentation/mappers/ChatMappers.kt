@@ -7,7 +7,7 @@ fun Chat.toUi(localParticipantId: String): ChatUi {
     val (local, other) = participants.partition { it.userId == localParticipantId }
     return ChatUi(
         id = id,
-        localParticipant = local.first().toUi(),
+        localParticipant = local.firstOrNull()?.toUi() ?: throw IllegalStateException("Local participant not found in chat"),
         otherParticipants = other.map { it.toUi() },
         lastMessage = lastMessage,
         lastMessageSenderUsername = lastMessageSenderUsername
