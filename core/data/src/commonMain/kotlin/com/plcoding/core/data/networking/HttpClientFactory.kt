@@ -96,7 +96,14 @@ class HttpClientFactory(
                                 markAsRefreshTokenRequest()
                             }
                         ).onSuccess { newAuthInfo ->
-                            sessionStorage.set(newAuthInfo.toDomain())
+                            val currentAuthInfo = authInfo
+                            val newAuthInfoDomain = newAuthInfo.toDomain()
+                            val updatedAuthInfo = newAuthInfoDomain.copy(
+                                user = newAuthInfoDomain.user.copy(
+                                    profilePictureUrl = currentAuthInfo.user.profilePictureUrl
+                                )
+                            )
+                            sessionStorage.set(updatedAuthInfo)
                             bearerTokens = BearerTokens(
                                 accessToken = newAuthInfo.accessToken,
                                 refreshToken = newAuthInfo.refreshToken
