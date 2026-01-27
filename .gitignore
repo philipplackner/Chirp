@@ -18,4 +18,5 @@ captures
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 iosApp/iosApp/GoogleService-Info.plist
+androidApp/google-services.json
 output
