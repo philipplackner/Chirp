@@ -77,6 +77,7 @@ fun NavGraphBuilder.authGraph(
                         popUpTo<AuthGraphRoutes.EmailVerification> {
                             inclusive = true
                         }
+                        launchSingleTop = true
                     }
                 },
                 onCloseClick = {
@@ -84,6 +85,7 @@ fun NavGraphBuilder.authGraph(
                         popUpTo<AuthGraphRoutes.EmailVerification> {
                             inclusive = true
                         }
+                        launchSingleTop = true
                     }
                 }
             )
