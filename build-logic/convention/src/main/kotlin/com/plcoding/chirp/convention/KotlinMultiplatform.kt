@@ -1,16 +1,16 @@
 package com.plcoding.chirp.convention
 
-import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
+/**
+ * Configures Kotlin Multiplatform for library modules.
+ * Note: Android library settings (namespace, compileSdk, minSdk, androidResources) must be
+ * configured in each module's build.gradle.kts using kotlin { androidLibrary { ... } }
+ */
 internal fun Project.configureKotlinMultiplatform() {
-    extensions.configure<LibraryExtension> {
-        namespace = this@configureKotlinMultiplatform.pathToPackageName()
-    }
-
-    configureAndroidTarget()
+    configureAndroidLibraryTarget()
     configureDesktopTarget()
 
     extensions.configure<KotlinMultiplatformExtension> {

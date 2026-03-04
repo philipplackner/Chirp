@@ -3,6 +3,16 @@ plugins {
 }
 
 kotlin {
+    androidLibrary {
+        namespace = "com.plcoding.feature.chat.presentation"
+        compileSdk = 36
+        minSdk = 26
+
+        androidResources {
+            enable = true
+        }
+    }
+
     // Source set declarations.
     // Declaring a target automatically creates a source set with the same name. By default, the
     // Kotlin Gradle Plugin creates additional source sets that depend on each other, since it is
@@ -22,13 +32,12 @@ kotlin {
                 implementation(libs.material3.adaptive.navigation)
                 implementation(libs.jetbrains.compose.backhandler)
                 implementation(libs.kotlinx.datetime)
-
-                implementation(compose.components.resources)
-                implementation(compose.components.uiToolingPreview)
             }
         }
 
+        val mobileMain by getting
         androidMain {
+            dependsOn(mobileMain)
             dependencies {
                 // Add Android-specific dependencies here. Note that this source set depends on
                 // commonMain by default and will correctly pull the Android artifacts of any KMP
@@ -47,4 +56,8 @@ kotlin {
         }
     }
 
+}
+
+compose.resources {
+    packageOfResClass = "com.plcoding.chat.presentation"
 }

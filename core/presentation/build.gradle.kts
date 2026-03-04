@@ -3,6 +3,16 @@ plugins {
 }
 
 kotlin {
+    androidLibrary {
+        namespace = "com.plcoding.core.presentation"
+        compileSdk = 36
+        minSdk = 26
+
+        androidResources {
+            enable = true
+        }
+    }
+
     // Source set declarations.
     // Declaring a target automatically creates a source set with the same name. By default, the
     // Kotlin Gradle Plugin creates additional source sets that depend on each other, since it is
@@ -19,16 +29,23 @@ kotlin {
                 implementation(libs.material3.adaptive)
                 implementation(libs.jetbrains.lifecycle.compose)
                 implementation(libs.bundles.koin.common)
-
-                implementation(compose.components.resources)
             }
         }
 
-        mobileMain.dependencies {
-            implementation(libs.moko.permissions)
-            implementation(libs.moko.permissions.compose)
-            implementation(libs.moko.permissions.notifications)
+        val mobileMain by getting {
+            dependencies {
+                implementation(libs.moko.permissions)
+                implementation(libs.moko.permissions.compose)
+                implementation(libs.moko.permissions.notifications)
+            }
+        }
+        androidMain {
+            dependsOn(mobileMain)
         }
     }
 
+}
+
+compose.resources {
+    packageOfResClass = "com.plcoding.core.presentation"
 }

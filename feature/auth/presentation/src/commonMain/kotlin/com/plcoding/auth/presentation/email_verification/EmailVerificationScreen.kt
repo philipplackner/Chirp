@@ -18,14 +18,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import chirp.feature.auth.presentation.generated.resources.Res
-import chirp.feature.auth.presentation.generated.resources.close
-import chirp.feature.auth.presentation.generated.resources.email_verified_failed
-import chirp.feature.auth.presentation.generated.resources.email_verified_failed_desc
-import chirp.feature.auth.presentation.generated.resources.email_verified_successfully
-import chirp.feature.auth.presentation.generated.resources.email_verified_successfully_desc
-import chirp.feature.auth.presentation.generated.resources.login
-import chirp.feature.auth.presentation.generated.resources.verifying_account
+import com.plcoding.auth.presentation.Res
+import com.plcoding.auth.presentation.close
+import com.plcoding.auth.presentation.email_verified_failed
+import com.plcoding.auth.presentation.email_verified_failed_desc
+import com.plcoding.auth.presentation.email_verified_successfully
+import com.plcoding.auth.presentation.email_verified_successfully_desc
+import com.plcoding.auth.presentation.login
+import com.plcoding.auth.presentation.verifying_account
 import com.plcoding.core.designsystem.components.brand.ChirpFailureIcon
 import com.plcoding.core.designsystem.components.brand.ChirpSuccessIcon
 import com.plcoding.core.designsystem.components.buttons.ChirpButton
@@ -36,7 +36,7 @@ import com.plcoding.core.designsystem.components.layouts.ChirpSnackbarScaffold
 import com.plcoding.core.designsystem.theme.ChirpTheme
 import com.plcoding.core.designsystem.theme.extended
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable

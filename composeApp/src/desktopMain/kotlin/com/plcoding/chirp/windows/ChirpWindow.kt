@@ -8,11 +8,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.MenuBar
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.rememberWindowState
-import chirp.composeapp.generated.resources.Res
-import chirp.composeapp.generated.resources.file
-import chirp.composeapp.generated.resources.logo
-import chirp.composeapp.generated.resources.new_window
-import chirp.core.designsystem.generated.resources.logo_chirp
+import com.plcoding.chirp.Res
+import com.plcoding.chirp.file
+import com.plcoding.chirp.logo
+import com.plcoding.chirp.new_window
+import com.plcoding.core.designsystem.logo_chirp
 import com.plcoding.chirp.App
 import com.plcoding.chirp.theme.AppTheme
 import org.jetbrains.compose.resources.painterResource

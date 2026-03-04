@@ -1,11 +1,11 @@
 package com.plcoding.chat.presentation.util
 
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.network_error
-import chirp.feature.chat.presentation.generated.resources.offline
-import chirp.feature.chat.presentation.generated.resources.online
-import chirp.feature.chat.presentation.generated.resources.reconnecting
-import chirp.feature.chat.presentation.generated.resources.unknown_error
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.network_error
+import com.plcoding.chat.presentation.offline
+import com.plcoding.chat.presentation.online
+import com.plcoding.chat.presentation.reconnecting
+import com.plcoding.chat.presentation.unknown_error
 import com.plcoding.chat.domain.models.ConnectionState
 import com.plcoding.core.presentation.util.UiText
 

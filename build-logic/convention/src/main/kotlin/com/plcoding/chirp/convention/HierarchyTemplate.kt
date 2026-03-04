@@ -16,6 +16,14 @@ private val hierarchyTemplate = KotlinHierarchyTemplate {
     common {
         withCompilations { true }
 
+        /*
+            AGP 9.0 Prep:
+            jvmCommon was removed because Android belonged to both mobile and jvmCommon,
+            creating overlapping source-set paths. With the new AGP KMP plugin, this ambiguity
+            forces actuals to exist in all intermediate source sets, leading to compilation
+            errors. Removing jvmCommon globally avoids this conflict, while modules that truly
+            need Android + Desktop JVM sharing can opt in explicitly using dependsOn().
+         */
         group("mobile") {
             withAndroidTarget()
             group("ios") {
@@ -23,11 +31,13 @@ private val hierarchyTemplate = KotlinHierarchyTemplate {
             }
         }
 
-        group("jvmCommon") {
-            withAndroidTarget()
-            withJvm()
-        }
-
+        /*
+            Android no longer automatically depends on intermediate source sets such as
+            mobileMain or jvmCommonMain, and jvmCommonMain has been removed from the global
+            hierarchy. As of Gradle 9.0, any module that needs to share code between Android
+            and Desktop JVM must explicitly configure this dependency, for example by
+            making androidMain depend on jvmCommonMain.
+        */
         group("native") {
             withNative()
 

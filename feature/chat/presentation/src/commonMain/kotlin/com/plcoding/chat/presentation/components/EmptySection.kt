@@ -12,8 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import chirp.feature.chat.presentation.generated.resources.Res
-import chirp.feature.chat.presentation.generated.resources.empty_chat
+import com.plcoding.chat.presentation.Res
+import com.plcoding.chat.presentation.empty_chat
 import com.plcoding.core.designsystem.theme.extended
 import com.plcoding.core.presentation.util.DeviceConfiguration
 import com.plcoding.core.presentation.util.currentDeviceConfiguration
