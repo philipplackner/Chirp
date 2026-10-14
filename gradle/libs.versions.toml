@@ -14,7 +14,7 @@ androidTools = "32.0.0"
 compose-hot-reload = "1.0.0-beta04"
 compose-multiplatform = "1.10.0"
 # Maintain compose multiplatform version aligned with navigation, cache error could happen
-compose-lifecycle = "2.9.1"
+compose-lifecycle = "2.10.0"
 navigation-compose = "2.9.0-beta04"
 jetbrains-core-bundle = "1.0.1"
 material-icons = "1.7.3"
